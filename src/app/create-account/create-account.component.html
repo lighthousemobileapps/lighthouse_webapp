@@ -1,0 +1,68 @@
+<form [formGroup]="signUpForm">
+  <div class="header">Create your account</div>
+
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput type="email" id="signUp_email" placeholder="example@gmail.com" autocomplete="email" formControlName="email" required>
+    <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput type="password" id="signUp_password" autocomplete="new-password" formControlName="password" required>
+    <!-- <mat-error *ngIf="password.invalid">{{getErrorMessage()}}</mat-error> -->
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Confirm Password</mat-label>
+    <input matInput type="password" id="signUp_confirm_password"  autocomplete="new-password" formControlName="confirmPassword" required>
+    <!-- <mat-error *ngIf="confirmPassword.invalid">{{getErrorMessage()}}</mat-error> -->
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Full Name</mat-label>
+    <input matInput type="text" id="full_name" placeholder="John Smith" autocomplete="new-password" formControlName="fullName" required>
+    <!-- <mat-error *ngIf="fullName.invalid">{{getErrorMessage()}}</mat-error> -->
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Date of Birth</mat-label>
+    <input matInput type="date" id="dob"  formControlName="dob" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Sex</mat-label>
+    <mat-select id="sex"  formControlName="sex" required>
+      <mat-option value="Male">Male</mat-option>
+      <mat-option value="Female">Female</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Vehicle Type</mat-label>
+    <mat-select id="vehicle_type"  formControlName="vehicleType" required>
+      <mat-option value="Motorcycle">Motorcycle</mat-option>
+      <mat-option value="Car">Car</mat-option>
+      <mat-option value="Van">Van</mat-option>
+      <mat-option value="Truck">Truck</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Country</mat-label>
+    <mat-select id="country"  formControlName="country" required>
+      <mat-option value="Republic of Ireland">Rep. of Ireland</mat-option>
+      <mat-option value="United Kingdom">UK</mat-option>
+      <mat-option value="United States of America">USA</mat-option>
+      <mat-option value="France">France</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="actions">
+    <button mat-flat-button color="accent" type="submit" (click)="signUp()" [disabled]="!signUpForm.valid">Sign up</button>
+    <div class="separator">
+      <span>Already have an account?</span>
+    </div>
+    <button mat-stroked-button routerLink="/login">Login</button>
+  </div>
+</form>

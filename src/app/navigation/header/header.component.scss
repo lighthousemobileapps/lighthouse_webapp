@@ -1,0 +1,55 @@
+@import '../../../theme.scss';
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a {
+    position:relative;
+    text-decoration: none;
+    text-align: center;
+    color: $accent-color;
+    padding: 10px;
+    cursor: pointer;
+}
+a:hover, a:active {
+    color: lightgray;
+}
+
+button:hoover {
+    color: lightgray;
+}
+
+.icon {
+    cursor: pointer;
+    max-height: 50px;
+    content: url('../../../assets/ic_launcher-playstore.png');
+}
+mat-icon {
+    cursor: pointer;
+    max-height: 50px;
+}
+
+h1 {
+    color: lightgray;
+    text-align: center;
+    width:200px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.navigation-items{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ 
+@media(max-width: 959px){
+    mat-toolbar{
+        border-radius: 0px;
+    }
+}

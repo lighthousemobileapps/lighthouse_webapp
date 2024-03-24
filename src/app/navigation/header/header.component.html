@@ -1,0 +1,23 @@
+<mat-toolbar fxFlex color="primary">
+    <div fxFlex fxLayoutAlign="start" >
+        <button  mat-icon-button (click)="onToggleSidenav()">
+            <mat-icon>{{ isOpened ? 'arrow_back' : 'menu'}}</mat-icon>
+        </button>
+    </div>
+    <div fxLayoutAlign="center" fxFlex>
+        <div class="title-icon" routerLink="/home">
+            <img class="icon">
+        </div>    
+        <div class="title" routerLink="/home" fxShow fxHide.lt-md>
+            <h1>LightHouse Mobile Apps</h1>
+        </div>
+    </div>
+    
+
+    <!-- <div fxFlex fxShow fxHide.lt-md fxLayoutAlign="end" color="accent">
+        <a (click)="onToggleLogin()">{{(authService.isLoggedIn) ? 'Logout' : 'Login'}}</a>
+    </div> -->
+    <div class="title-icon" fxFlex fxLayoutAlign="end" >
+        <mat-icon (click)="onToggleLogin()">{{(authService.isLoggedIn) ? 'logout' : 'login'}}</mat-icon>
+    </div>
+</mat-toolbar>

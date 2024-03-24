@@ -1,0 +1,112 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$primary-map: (
+    50 : #e7e7e7,
+    100 : #c4c4c4,
+    200 : #9c9c9c,
+    300 : #747474,
+    400 : #575757,
+    500 : #393939,
+    600 : #333333,
+    700 : #2c2c2c,
+    800 : #242424,
+    900 : #171717,
+    A100 : #ef7171,
+    A200 : #ea4343,
+    A400 : #fa0000,
+    A700 : #e00000,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+$accent-map: (
+    50 : #ffe0e1,
+    100 : #ffb3b4,
+    200 : #ff8083,
+    300 : #ff4d51,
+    400 : #ff262b,
+    500 : #ff0006,
+    600 : #ff0005,
+    700 : #ff0004,
+    800 : #ff0003,
+    900 : #ff0002,
+    A100 : #ffffff,
+    A200 : #fff2f2,
+    A400 : #ffbfbf,
+    A700 : #ffa6a6,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+$warning-map: (
+    50 : #fff8e1,
+    100 : #ffecb5,
+    200 : #ffe083,
+    300 : #ffd451,
+    400 : #ffca2c,
+    500 : #ffc107,
+    600 : #ffbb06,
+    700 : #ffb305,
+    800 : #ffab04,
+    900 : #ff9e02,
+    A100 : #ffffff,
+    A200 : #fffaf2,
+    A400 : #ffe4bf,
+    A700 : #ffd9a6,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+$lighthouse-primary: mat-palette($primary-map);
+$lighthouse-accent:  mat-palette($accent-map);
+$lighthouse-warn:    mat-palette($warning-map);
+$lighthouse-theme: mat-dark-theme($lighthouse-primary, $lighthouse-accent, $lighthouse-warn);
+@include angular-material-theme($lighthouse-theme);
+
+
+$primary-color: mat-color($lighthouse-primary, 500);
+$secondary-color: mat-color($lighthouse-primary, 200);
+$accent-color: mat-color($lighthouse-accent, 500);
+$warn-color: mat-color($lighthouse-warn, 500);
