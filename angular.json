@@ -31,8 +31,6 @@
               "src/theme.scss"
             ],
             "scripts": [
-              "../node_modules/hls.js/dist/hls.min.js",
-              "../node_modules/dashjs/dist/dash.all.min.js"
             ]
           },
           "configurations": {
@@ -107,5 +105,8 @@
       }
     }
   },
-  "defaultProject": "lighthouse-webapp"
+  "defaultProject": "lighthouse-webapp",
+  "cli": {
+    "analytics": false
+  }
 }
