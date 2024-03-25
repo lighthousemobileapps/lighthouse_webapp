@@ -1,5 +1,6 @@
-@import '~@angular/material/theming';
-@include mat-core();
+@use '@angular/material' as mat;
+
+@include mat.core();
 
 $primary-map: (
     50 : #e7e7e7,
@@ -99,14 +100,25 @@ $warning-map: (
 );
 
 
-$lighthouse-primary: mat-palette($primary-map);
-$lighthouse-accent:  mat-palette($accent-map);
-$lighthouse-warn:    mat-palette($warning-map);
-$lighthouse-theme: mat-dark-theme($lighthouse-primary, $lighthouse-accent, $lighthouse-warn);
-@include angular-material-theme($lighthouse-theme);
+$lighthouse-primary: mat.define-palette($primary-map, 500);// mat-palette($primary-map);
+// $lighthouse-secondary: mat.define-palette($primary-map, 200);// mat-palette($primary-map);
+$lighthouse-accent:  mat.define-palette($accent-map, 500);
+$lighthouse-warn:    mat.define-palette($warning-map, 500);
+
+$lighthouse-theme: mat.define-dark-theme((
+  color: (
+    primary: $lighthouse-primary,
+    accent: $lighthouse-accent,
+    warn: $lighthouse-warn
+  ),
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+@include mat.all-component-themes($lighthouse-theme);
 
 
-$primary-color: mat-color($lighthouse-primary, 500);
-$secondary-color: mat-color($lighthouse-primary, 200);
-$accent-color: mat-color($lighthouse-accent, 500);
-$warn-color: mat-color($lighthouse-warn, 500);
+// $primary-color: mat-color($lighthouse-primary, 500);
+// $primary-color: mat.define-color($lighthouse-primary, 500);
+// $secondary-color: mat.define-color($lighthouse-primary, 200);
+// $accent-color: mat.define-color($lighthouse-accent, 500);
+// $warn-color: mat.define-color($lighthouse-warn, 500);

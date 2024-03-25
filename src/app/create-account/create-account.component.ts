@@ -54,6 +54,6 @@ export class CreateAccountComponent implements OnInit {
       autoRenew: false,
       emailVerified: false,
     }
-    this.authService.signUp(userRegistration);
+    // this.authService.signUp(userRegistration);
   }
 }

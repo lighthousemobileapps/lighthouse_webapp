@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -7,23 +7,19 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   @Output() public sidenavToggle = new EventEmitter();
   @Input() isOpened: boolean | undefined;
-  
-  constructor(
-    public authService: AuthService,
-    public router: Router, 
-  ) {  }
 
-  ngOnInit(): void {
-  }
-  
+  authService = inject(AuthService);
+  router = inject(Router);
+
+
   public onToggleSidenav = () => {
     this.sidenavToggle.emit();
   }
-  
+
 
   public onToggleLogin() {
     if(this.authService.isLoggedIn){

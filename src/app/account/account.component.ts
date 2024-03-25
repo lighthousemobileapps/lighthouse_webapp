@@ -42,7 +42,7 @@ export class AccountComponent implements OnInit {
     return this.updateAccountForm;
   }
   constructor( private formBuilder : FormBuilder, private accountService : AccountService ) {}
-  
+
 
   ngOnInit(): void {
 
@@ -69,7 +69,7 @@ export class AccountComponent implements OnInit {
         auto_renew: [this.info.auto_renew]
       });
       this.updateAccountForm;
-      
+
     });
   }
 

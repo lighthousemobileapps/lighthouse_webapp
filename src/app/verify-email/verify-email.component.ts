@@ -14,6 +14,6 @@ export class VerifyEmailComponent implements OnInit {
   ngOnInit() {}
 
   sendEmail() {
-    this.authService.sendVerificationEmail();
+    // this.authService.sendVerificationEmail();
   }
 }

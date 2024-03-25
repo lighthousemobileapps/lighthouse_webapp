@@ -1,35 +1,43 @@
-import { NgModule } from '@angular/core';
+import { NgModule, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
+import { ActivatedRouteSnapshot, RouterModule, RouterStateSnapshot, Routes } from '@angular/router';
 import { CreateAccountComponent } from '../create-account/create-account.component';
 import { FeaturesComponent } from '../features/features.component';
 import { SupportComponent } from '../support/support.component';
 import { HomeComponent } from '../home/home.component';
 import { LoginComponent } from '../login/login.component';
-import { VerifyEmailComponent } from '../verify-email/verify-email.component';
+// import { VerifyEmailComponent } from '../verify-email/verify-email.component';
 import { AccountComponent } from '../account/account.component';
-import { AuthGuard } from '../services/guard/auth.guard';
+import { AuthGuard,
+  redirectLoggedInTo,
+  redirectUnauthorizedTo} from '@angular/fire/auth-guard';
 import { LiveComponent } from '../live/live.component';
+import { AuthService } from '../services/auth.service';
+import { PrivacyPolicyComponent } from '../privacy/privacy-policy.component';
+import { TermsAndConditionsComponent } from '../terms/terms.component';
+
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
+const redirectLoggedInToHome = () => redirectLoggedInTo(['home']);
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'live', component: LiveComponent, canActivate: [AuthGuard] },
+  { path: 'live', component: LiveComponent, canActivate: [AuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'features', component: FeaturesComponent },
-  { path: 'account', component: AccountComponent, canActivate: [AuthGuard]},
+  { path: 'account', component: AccountComponent, canActivate: [() => inject(AuthService).isLoggedIn]},
   { path: 'create-account', component: CreateAccountComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'verify-email', component: VerifyEmailComponent },
+  { path: 'login', component: LoginComponent, canActivate: [AuthGuard], data: {authGuardPipe: redirectLoggedInToHome} },
+  // { path: 'verify-email', component: VerifyEmailComponent },
   { path: 'support', component: SupportComponent },
-  { path: 'terms-of-use', component: CreateAccountComponent },
-  { path: 'privacy-policy', component: SupportComponent }
+  { path: 'terms', component: TermsAndConditionsComponent },
+  { path: 'privacy-policy', component: PrivacyPolicyComponent }
 ];
 
 
 @NgModule({
   declarations: [],
-  imports: [ 
+  imports: [
     CommonModule,
-    RouterModule.forRoot(routes) 
+    RouterModule.forRoot(routes)
   ],
   exports: [ RouterModule ]
 })

@@ -9,7 +9,7 @@ a {
     position:relative;
     text-decoration: none;
     text-align: center;
-    color: $accent-color;
+    color: $lighthouse-accent;
     padding: 10px;
     cursor: pointer;
 }
@@ -40,14 +40,14 @@ h1 {
     justify-content: center;
     align-items: center;
 }
- 
+
 .navigation-items{
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
- 
+
 @media(max-width: 959px){
     mat-toolbar{
         border-radius: 0px;
