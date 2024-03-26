@@ -1,7 +1,6 @@
 <app-layout>
   <app-header [isOpened]="sidenav.opened" (sidenavToggle)="sidenav.toggle()"></app-header>
   <mat-sidenav-container autosize>
-
     <mat-sidenav #sidenav  mode="side" opened="true">
       <app-sidenav-list></app-sidenav-list>
     </mat-sidenav>

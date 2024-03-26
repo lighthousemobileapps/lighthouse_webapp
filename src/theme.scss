@@ -117,8 +117,7 @@ $lighthouse-theme: mat.define-dark-theme((
 @include mat.all-component-themes($lighthouse-theme);
 
 
-// $primary-color: mat-color($lighthouse-primary, 500);
-// $primary-color: mat.define-color($lighthouse-primary, 500);
-// $secondary-color: mat.define-color($lighthouse-primary, 200);
-// $accent-color: mat.define-color($lighthouse-accent, 500);
-// $warn-color: mat.define-color($lighthouse-warn, 500);
+$primary-color: mat.get-theme-color($lighthouse-theme, primary, 500);
+$secondary-color: mat.get-theme-color($lighthouse-theme, primary, 200);
+$accent-color: mat.get-theme-color($lighthouse-theme, accent, 500);
+$warn-color: mat.get-theme-color($lighthouse-theme, warn, 500);

@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class HeaderComponent {
 
   @Output() public sidenavToggle = new EventEmitter();
-  @Input() isOpened: boolean | undefined;
+  @Input() isOpened: boolean | undefined = true;
 
   authService = inject(AuthService);
   router = inject(Router);
@@ -18,6 +18,7 @@ export class HeaderComponent {
 
   public onToggleSidenav = () => {
     this.sidenavToggle.emit();
+    this.isOpened = !this.isOpened;
   }
 
 

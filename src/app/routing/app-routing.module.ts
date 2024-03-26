@@ -15,6 +15,7 @@ import { LiveComponent } from '../live/live.component';
 import { AuthService } from '../services/auth.service';
 import { PrivacyPolicyComponent } from '../privacy/privacy-policy.component';
 import { TermsAndConditionsComponent } from '../terms/terms.component';
+import { RecordingsComponent } from '../recordings/recordings.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const redirectLoggedInToHome = () => redirectLoggedInTo(['home']);
@@ -22,6 +23,7 @@ const redirectLoggedInToHome = () => redirectLoggedInTo(['home']);
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'live', component: LiveComponent, canActivate: [AuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
+  { path: 'recordings', component: RecordingsComponent, canActivate: [AuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'features', component: FeaturesComponent },
   { path: 'account', component: AccountComponent, canActivate: [() => inject(AuthService).isLoggedIn]},
   { path: 'create-account', component: CreateAccountComponent },
