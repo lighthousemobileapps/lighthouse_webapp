@@ -7,6 +7,7 @@ import { AppRoutingModule } from './routing/app-routing.module';
 import { provideFirebaseApp, initializeApp } from "@angular/fire/app";
 import { getFirestore, provideFirestore } from "@angular/fire/firestore";
 import { provideAuth, getAuth,  } from '@angular/fire/auth';
+import { provideStorage, getStorage  } from '@angular/fire/storage';
 // import { IvyCarouselModule}  from 'angular-responsive-carousel';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -18,11 +19,13 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
 import { LoginComponent } from './login/login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { AccountComponent } from './account/account.component';
-import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { environment } from 'src/environments/environment';
 import { LiveComponent } from './live/live.component';
 import { PrivacyPolicyComponent } from './privacy/privacy-policy.component';
 import { TermsAndConditionsComponent } from './terms/terms.component';
+import { RecordingsComponent } from './recordings/list/recordings.component';
+import { ViewRecordingComponent } from './recordings/view/view-recording.component';
+
 
 @NgModule({
   declarations: [
@@ -35,10 +38,11 @@ import { TermsAndConditionsComponent } from './terms/terms.component';
     LoginComponent,
     CreateAccountComponent,
     AccountComponent,
-    VerifyEmailComponent,
     LiveComponent,
     PrivacyPolicyComponent,
     TermsAndConditionsComponent,
+    RecordingsComponent,
+    ViewRecordingComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +54,7 @@ import { TermsAndConditionsComponent } from './terms/terms.component';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
+    provideStorage(() => getStorage()),
     FormsModule,
     ReactiveFormsModule,
   ],

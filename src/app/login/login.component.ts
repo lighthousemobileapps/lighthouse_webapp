@@ -30,7 +30,7 @@ export class LoginComponent {
 
   login() {
     // this.isLoading = true;
-    this.authService.googleAuth();
+    this.authService.signInWithGoogle();
     // this.isLoading = false;
   }
 

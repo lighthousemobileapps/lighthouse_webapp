@@ -1,8 +1,9 @@
-import { Injectable, NgZone, inject } from '@angular/core';
-import { Auth, GoogleAuthProvider, signInWithPopup } from "@angular/fire/auth";
+import { Injectable, NgZone, OnDestroy, inject } from '@angular/core';
+import { Auth, onAuthStateChanged , GoogleAuthProvider, signInWithPopup, user, User } from "@angular/fire/auth";
 import { Firestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+// import { User, getAuth, onAuthStateChanged } from 'firebase/auth';
+import { Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,14 +11,42 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 export class AuthService {
 
   auth: Auth = inject(Auth);
+  user$ = user(this.auth);
   router: Router = inject(Router)
+
   private provider = new GoogleAuthProvider();
 
-  userData: any;
+  public isLoggedIn: boolean = false;
+  uid: string | undefined;
 
 
-  async googleAuth(){
-    await signInWithPopup(this.auth, this.provider).then(() => {
+  // userData: any;
+
+  constructor(){
+    onAuthStateChanged(this.auth, (user) => {
+      if (user) {
+        this.isLoggedIn = true;
+        this.uid = user.uid;
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/auth.user
+        // const uid = user.uid;
+        // ...
+      } else {
+        this.isLoggedIn = false;
+        // User is signed out
+        // ...
+      }
+    });
+  }
+
+
+
+
+  async signInWithGoogle(){
+    await signInWithPopup(this.auth, this.provider).then((result) => {
+      // const  credential = GoogleAuthProvider.credentialFromResult(result);
+      // localStorage.setItem('user', JSON.stringify(result.user));
+      // JSON.parse(localStorage.getItem('user')!);
       this.router.navigate(['home']);
     });
   }
@@ -67,9 +96,9 @@ export class AuthService {
     });
   }
 
-  get isLoggedIn(): boolean {
-    const token = JSON.parse(localStorage.getItem('user')!);
-    const user = JSON.parse(token as string);
-    return user == null;
-  }
+  // get isLoggedIn(): boolean {
+  //   const user = JSON.parse(localStorage.getItem('user')!);
+  //   // this.user = JSON.parse(token as string);
+  //   return user == null;
+  // }
 }

@@ -1,6 +1,6 @@
 import { NgModule, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRouteSnapshot, RouterModule, RouterStateSnapshot, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { CreateAccountComponent } from '../create-account/create-account.component';
 import { FeaturesComponent } from '../features/features.component';
 import { SupportComponent } from '../support/support.component';
@@ -15,7 +15,8 @@ import { LiveComponent } from '../live/live.component';
 import { AuthService } from '../services/auth.service';
 import { PrivacyPolicyComponent } from '../privacy/privacy-policy.component';
 import { TermsAndConditionsComponent } from '../terms/terms.component';
-import { RecordingsComponent } from '../recordings/recordings.component';
+import { RecordingsComponent } from '../recordings/list/recordings.component';
+import { ViewRecordingComponent } from '../recordings/view/view-recording.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const redirectLoggedInToHome = () => redirectLoggedInTo(['home']);
@@ -24,11 +25,11 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'live', component: LiveComponent, canActivate: [AuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'recordings', component: RecordingsComponent, canActivate: [AuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
+  { path: 'view-recording', component: ViewRecordingComponent, canActivate: [AuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'features', component: FeaturesComponent },
   { path: 'account', component: AccountComponent, canActivate: [() => inject(AuthService).isLoggedIn]},
   { path: 'create-account', component: CreateAccountComponent },
   { path: 'login', component: LoginComponent, canActivate: [AuthGuard], data: {authGuardPipe: redirectLoggedInToHome} },
-  // { path: 'verify-email', component: VerifyEmailComponent },
   { path: 'support', component: SupportComponent },
   { path: 'terms', component: TermsAndConditionsComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent }
