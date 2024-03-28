@@ -1,4 +1,4 @@
-import { Input, OnDestroy, inject } from '@angular/core';
+import { ElementRef, Input, OnChanges, OnDestroy, SimpleChanges, ViewChild, inject } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, NavigationEnd, Router, UrlSegment } from '@angular/router';
@@ -15,22 +15,46 @@ import { RecordingsService } from 'src/app/services/recordings.service';
 })
 export class ViewRecordingComponent implements OnInit{
 
+
+  @ViewChild('videoPlayer')
+  videoPlayer!: ElementRef;
+
+  startVideo() {
+    console.log(this.videoURL);
+    this.videoPlayer.nativeElement.play();
+  }
+
+
   router = inject(Router);
   // ref: StorageReference | undefined;
   recordingsService = inject(RecordingsService);
-  url: string = '';
+  videoURL: string = '';
+  videoName: string = '';
+
+  // constructor(){
+  //   const currentState = this.router.lastSuccessfulNavigation?.extras.state;
+  //   if(currentState){
+  //     console.log(currentState['reference']);
+  //     this.videoName = currentState['reference']
+  //     this.getDownloadUrl();
+  //   }
+  // }
+
 
   ngOnInit(): void {
     const currentState = this.router.lastSuccessfulNavigation?.extras.state;
-    console.log(currentState?.extras);
-    // const ref = currentState[data];
-
+    if(currentState){
+      console.log(currentState['reference']);
+      this.videoName = currentState['reference']
+      this.getDownloadUrl();
+    }
   }
-
 
 
   async getDownloadUrl(){
-      this.url = await this.recordingsService.getDownloadUrl(this.url);
-
+      this.videoURL = await this.recordingsService.getDownloadUrl(this.videoName);
+      console.log(this.videoURL);
   }
+
+
 }

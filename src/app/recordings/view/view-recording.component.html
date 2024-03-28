@@ -1,6 +1,7 @@
-<div class="container">
-  <div class="header">Watch Live</div>
-  <video controls preload="auto">
-    <source src="{{url}}" type="video/mp4">
+<div fxFlex fxLayout="column" >
+  <div fxFlex fxLayoutAlign="center">
+    <h2>{{videoName}}</h2>
+  </div>
+  <video layout-fill [src]="videoURL" type="video/mp4" controls="" autoplay="" name="media">
   </video>
 </div>
