@@ -1,8 +1,8 @@
 <mat-toolbar fxFlex color="primary">
     <div fxFlex fxLayoutAlign="start" >
-        <button  mat-icon-button (click)="onToggleSidenav()">
+        <button  mat-icon-button  *ngIf="!isOpened" (click)="onOpenSidenav()">
             <!-- <mat-icon>{{ isOpened ? 'arrow_back' : 'menu'}}</mat-icon> -->
-            <mat-icon *ngIf="isOpened">menu</mat-icon>
+            <mat-icon>menu</mat-icon>
         </button>
     </div>
     <div fxLayoutAlign="center" fxFlex>

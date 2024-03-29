@@ -1,11 +1,12 @@
 <app-layout>
-  <app-header [isOpened]="sidenav.opened" (sidenavToggle)="sidenav.toggle()"></app-header>
+  <!-- <app-header [isOpened]="sidenav.opened" (sidenavToggle)="sidenav.toggle()"></app-header> -->
   <mat-sidenav-container autosize>
-    <mat-sidenav #sidenav  mode="side" opened="true">
-      <app-sidenav-list></app-sidenav-list>
+    <mat-sidenav #sidenav [mode]="isSmallScreen ? 'over' : 'push'">
+      <!-- [mode]="isMobile ? 'over' : 'side'"  -->
+      <app-sidenav-list (sidenavClose)="sidenav.toggle()"></app-sidenav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-      <!-- <app-header [isOpened]="sidenav.opened" (sidenavToggle)="sidenav.toggle()"></app-header> -->
+      <app-header [isOpened]="sidenav.opened" (sidenavOpen)="sidenav.toggle()"></app-header>
       <main>
         <router-outlet></router-outlet>
       </main>

@@ -17,3 +17,9 @@ a:hover, a:active{
 .profiler {
     background-color: transparent;
 }
+
+@media(max-width: 959px){
+  mat-toolbar{
+      border-radius: 0px;
+  }
+}

@@ -8,8 +8,8 @@ import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/cor
 
 export class SidenavListComponent implements OnInit {
 
-  // @Output() sidenavToggle = new EventEmitter();
- 
+  @Output() sidenavClose = new EventEmitter();
+
   // mediaSubscription: Subscription;
   isSidenavOpen = true;
   // isDesktop = true;
@@ -20,8 +20,6 @@ export class SidenavListComponent implements OnInit {
 
   ngOnInit(): void {  }
 
-  // public onToggleSidenav = () => {
-  //   this.sidenavToggle.emit();
-  // }
- 
+  public onCloseSidenav = () => this.sidenavClose.emit();
+
 }

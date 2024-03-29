@@ -1,5 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import { Component, HostListener, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +6,18 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./app.component.scss']
 })
 
-// @ViewChild('sidenav') MatSidenav;
 
-export class AppComponent {
+export class AppComponent implements OnChanges{
+
+  isSmallScreen: boolean = false;
   title = 'lighthouse-webapp';
+
+  ngOnChanges(changes: SimpleChanges): void {
+
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(){
+    this.isSmallScreen = window.innerWidth < 959;
+  }
 }
