@@ -2,7 +2,7 @@
 
 @include mat.core();
 
-$primary-map: (
+$primary-map-dark: (
     50 : #e7e7e7,
     100 : #c4c4c4,
     200 : #9c9c9c,
@@ -35,36 +35,36 @@ $primary-map: (
     )
 );
 $accent-map: (
-    50 : #ffe0e1,
-    100 : #ffb3b4,
-    200 : #ff8083,
-    300 : #ff4d51,
-    400 : #ff262b,
-    500 : #ff0006,
-    600 : #ff0005,
-    700 : #ff0004,
-    800 : #ff0003,
-    900 : #ff0002,
-    A100 : #ffffff,
-    A200 : #fff2f2,
-    A400 : #ffbfbf,
-    A700 : #ffa6a6,
-    contrast: (
-        50 : #000000,
-        100 : #000000,
-        200 : #000000,
-        300 : #000000,
-        400 : #ffffff,
-        500 : #ffffff,
-        600 : #ffffff,
-        700 : #ffffff,
-        800 : #ffffff,
-        900 : #ffffff,
-        A100 : #000000,
-        A200 : #000000,
-        A400 : #000000,
-        A700 : #000000,
-    )
+  50 : #fc8a8d,
+  100 : #fa3f44,
+  200 : #f9090f,
+  300 : #b60409,
+  400 : #980407,
+  500 : #7a0306,
+  600 : #5c0205,
+  700 : #3e0203,
+  800 : #200102,
+  900 : #020000,
+  A100 : #ff7d80,
+  A200 : #ff171d,
+  A400 : #b00004,
+  A700 : #960004,
+  contrast: (
+      50 : #000000,
+      100 : #ffffff,
+      200 : #ffffff,
+      300 : #ffffff,
+      400 : #ffffff,
+      500 : #ffffff,
+      600 : #ffffff,
+      700 : #ffffff,
+      800 : #ffffff,
+      900 : #ffffff,
+      A100 : #000000,
+      A200 : #ffffff,
+      A400 : #ffffff,
+      A700 : #ffffff,
+  )
 );
 $warning-map: (
     50 : #fff8e1,
@@ -98,26 +98,72 @@ $warning-map: (
         A700 : #000000,
     )
 );
+$primary-map-light: (
+  50 : #ffffff,
+  100 : #dddbdb,
+  200 : #c1bfbf,
+  300 : #9e9a9a,
+  400 : #8f8b8b,
+  500 : #807b7b,
+  600 : #706c6c,
+  700 : #615d5d,
+  800 : #514e4e,
+  900 : #423f3f,
+  A100 : #fefcfc,
+  A200 : #dbb9b9,
+  A400 : #a98585,
+  A700 : #928282,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #000000,
+      400 : #000000,
+      500 : #ffffff,
+      600 : #ffffff,
+      700 : #ffffff,
+      800 : #ffffff,
+      900 : #ffffff,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #000000,
+      A700 : #000000,
+  )
+);
 
 
-$lighthouse-primary: mat.define-palette($primary-map, 500);// mat-palette($primary-map);
-// $lighthouse-secondary: mat.define-palette($primary-map, 200);// mat-palette($primary-map);
+
+
+$lighthouse-primary-dark: mat.define-palette($primary-map-dark, 500);
+$lighthouse-primary-light: mat.define-palette($primary-map-light, 500);
 $lighthouse-accent:  mat.define-palette($accent-map, 500);
 $lighthouse-warn:    mat.define-palette($warning-map, 500);
 
-$lighthouse-theme: mat.define-dark-theme((
+$lighthouse-theme-dark: mat.define-dark-theme((
   color: (
-    primary: $lighthouse-primary,
+    primary: $lighthouse-primary-dark,
     accent: $lighthouse-accent,
     warn: $lighthouse-warn
   ),
   typography: mat.define-typography-config(),
   density: 0,
 ));
-@include mat.all-component-themes($lighthouse-theme);
+$lighthouse-theme-light: mat.define-light-theme((
+  color: (
+    primary: $lighthouse-primary-light,
+    accent: $lighthouse-accent,
+    warn: $lighthouse-warn
+  ),
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+@include mat.all-component-themes($lighthouse-theme-light);
+// @include mat.mat-button-theme($lighthouse-theme-dark);
 
 
-$primary-color: mat.get-theme-color($lighthouse-theme, primary, 500);
-$secondary-color: mat.get-theme-color($lighthouse-theme, primary, 200);
-$accent-color: mat.get-theme-color($lighthouse-theme, accent, 500);
-$warn-color: mat.get-theme-color($lighthouse-theme, warn, 500);
+$primary-color-dark: mat.get-theme-color($lighthouse-theme-dark, primary, 500);
+$primary-color-light: mat.get-theme-color($lighthouse-theme-light, primary, 500);
+$secondary-color-dark: mat.get-theme-color($lighthouse-theme-dark, primary, 200);
+$secondary-color-light: mat.get-theme-color($lighthouse-theme-light, primary, 200);
+$accent-color: mat.get-theme-color($lighthouse-theme-light, accent, 500);
+$warn-color: mat.get-theme-color($lighthouse-theme-light, warn, 500);

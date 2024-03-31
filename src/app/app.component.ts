@@ -1,4 +1,5 @@
-import { Component, HostListener, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, HostListener, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +8,12 @@ import { Component, HostListener, OnChanges, SimpleChanges } from '@angular/core
 })
 
 
-export class AppComponent implements OnChanges{
+export class AppComponent{
 
   isSmallScreen: boolean = false;
   title = 'lighthouse-webapp';
 
-  ngOnChanges(changes: SimpleChanges): void {
 
-  }
 
   @HostListener('window:resize', ['$event'])
   onResize(){

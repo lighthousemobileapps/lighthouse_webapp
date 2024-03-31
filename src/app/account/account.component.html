@@ -1,56 +1,29 @@
-<div class="container">
-    
+<!-- <div class="container">
+
     <form [formGroup]="updateAccountForm">
 
         <div class="header">Account Details</div>
 
-        
-<!--           
-        <mat-form-field>
-            <mat-label>Email:</mat-label>
-            <textarea matInput type="email" id="signUp_email" autocomplete="email" formControlName="email" required>{{info.email}}</textarea>
-            </mat-form-field> 
--->
-
             <mat-form-field appearance="fill">
             <mat-label>Name</mat-label>
             <input matInput type="text" id="name" formControlName="name" autocomplete="off" placeholder="Example Name" value="{{info.name}}"required>
-            <!-- <mat-error *ngIf="fullName.invalid">{{getErrorMessage()}}</mat-error> -->
+            <mat-error *ngIf="fullName.invalid">{{getErrorMessage()}}</mat-error>
             </mat-form-field>
-        
-            <mat-form-field appearance="fill">
-            <mat-label>Date of Birth</mat-label>
-            <input matInput type="date" id="dob"  formControlName="dob" value="{{(info.date_of_birth).toISOString().split('T')[0]}}" required>
-            </mat-form-field>
-        
-            <mat-form-field appearance="fill">
-                <mat-label>Sex</mat-label>
-                <mat-select [value]="info.sex"  id="sex"  formControlName="sex" required >
-                    <mat-option value="sex" *ngFor="let sex of sexes">{{sex}}</mat-option>
-                </mat-select>
-            </mat-form-field>
-        
+
             <mat-form-field appearance="fill">
                 <mat-label>Account Type:</mat-label>
                 <mat-select id="account_type"  formControlName="accountType" value="{{info.account_type}}" required>
                     <mat-option value="type" *ngFor="let type of accountTypes">{{type}}</mat-option>
                 </mat-select>
-            </mat-form-field>
+              </mat-form-field>
 
-            <mat-form-field appearance="fill">
-                <mat-label>Vehicle Type:</mat-label>
-                <mat-select id="vehicle_type"  formControlName="vehicleType"  required>
-                    <mat-option value="vehicle" *ngFor="let vehicle of vehicles">{{vehicle}}</mat-option>
-                </mat-select>
-            </mat-form-field>
-        
             <mat-form-field appearance="fill">
                 <mat-label>Country:</mat-label>
                 <mat-select id="country"  formControlName="country" value="info.country" required>
                     <mat-option value="country" *ngFor="let country of countries">{{country}}</mat-option>
                 </mat-select>
             </mat-form-field>
-        
+
             <mat-form-field appearance="fill">
                 <mat-label>Auto Renew:</mat-label>
                 <mat-select id="auto_renew"  formControlName="auto_renew" value="{(info.auto_renew) ? 'Yes' : 'No'}}" required>
@@ -58,24 +31,39 @@
                     <mat-option value=false>No</mat-option>
                 </mat-select>
             </mat-form-field>
-    
+
             <div class="actions">
                 <button mat-flat-button color="primary" type="submit" (click)="updateAccountInfo()">Confirm</button>
                 <button mat-flat-button type="button" color="accent" routerLink="/create-account">Delete Account</button>
-              </div>  
-<!--         
+              </div>
         <div class="spinner-container" *ngIf="isLoading">
             <div class="spinner-wrapper">
             <mat-spinner class="spinner" color="accent" diameter=50></mat-spinner>
             </div>
-        </div>     -->
+        </div>
         </form>
-    <!-- <div class="column">
-        <ul class="list">
-            <li class="listRow" *ngFor="let element of displayInfo">
-                <div class="title">{{element.title}}</div>
-                <div class="value">{{element.value}}</div>
-            </li>
-        </ul>
-    </div> -->
+</div> -->
+
+<div class="container" fxFlex fxLayoutAlign="center">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Account Settings</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="settingsForm" (ngSubmit)="updateSettings()">
+        <mat-form-field>
+          <mat-slide-toggle formControlName="newsletterControl">Receive Marketing Emails</mat-slide-toggle>
+        </mat-form-field>
+        <!-- <mat-form-field> -->
+          <mat-label>Account Type:</mat-label>
+          <mat-radio-group fxLayout="column" [formControl]="accountTypeControl">
+            <mat-radio-button value="basic">
+              Basic
+            </mat-radio-button>
+          </mat-radio-group>
+        <!-- </mat-form-field> -->
+        <button mat-raised-button type="submit">Save Settings</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
 </div>

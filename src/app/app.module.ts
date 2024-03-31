@@ -13,7 +13,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
 import { HomeComponent } from './home/home.component';
-import { FeaturesComponent } from "./features/features.component";
+import { OfferingsComponent } from "./offerings/offerings.component";
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { LoginComponent } from './login/login.component';
@@ -32,7 +32,7 @@ import { ViewRecordingComponent } from './recordings/view/view-recording.compone
     AppComponent,
     LayoutComponent,
     HomeComponent,
-    FeaturesComponent,
+    OfferingsComponent,
     HeaderComponent,
     SidenavListComponent,
     LoginComponent,
@@ -49,7 +49,6 @@ import { ViewRecordingComponent } from './recordings/view/view-recording.compone
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    // IvyCarouselModule,
     AppRoutingModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),

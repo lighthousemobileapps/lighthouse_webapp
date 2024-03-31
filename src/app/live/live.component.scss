@@ -52,18 +52,18 @@ form {
         }
     }
 }
-  
 
-#local-stream-container { 
-    position: relative; 
-    display: inline-block;
-  }
-  
-  .remote-stream-container { 
+
+#local-stream-container {
+    position: relative;
     display: inline-block;
   }
 
-  
+  .remote-stream-container {
+    display: inline-block;
+  }
+
+
   .liveStream{
     position: absolute;
     z-index: 1;
@@ -71,3 +71,4 @@ form {
     width: 80%;
     max-width: 500px;
   }
+

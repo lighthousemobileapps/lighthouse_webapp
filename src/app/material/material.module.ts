@@ -14,6 +14,8 @@ import { MatCardModule } from "@angular/material/card";
 import { MatTableModule } from "@angular/material/table";
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatRadioButton } from "@angular/material/radio";
+import { MatSlideToggle } from "@angular/material/slide-toggle";
 
 
 
@@ -35,6 +37,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatTableModule,
     MatProgressSpinnerModule,
     MatExpansionModule,
+    MatRadioButton,
+    MatSlideToggle,
   ],
   exports: [
     MatTabsModule,
@@ -51,6 +55,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatTableModule,
     MatProgressSpinnerModule,
     MatExpansionModule,
+    MatRadioButton,
+    MatSlideToggle,
   ]
 })
 export class MaterialModule { }

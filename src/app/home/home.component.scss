@@ -15,6 +15,7 @@ body{
   font-weight: 400;
   line-height: 1.7;
   color: #777;
+  margin: 20px;
 
 }
 
@@ -157,99 +158,57 @@ svg{
       font-size: 3rem;
       font-weight: 300;
   }
+}
+
+@media (min-width: 768px){
+    .main-title h1{
+        font-size: 6rem;
+        font-weight: 800;
+        color: #555;
+    }
+
+    .main-title h2{
+        font-size: 4rem;
+        font-weight: 300;
+    }
 
 
+}
+
+@media (min-width: 1024px){
+
+  .main-title h1{
+      font-size: 7rem;
+      font-weight: 900;
+      color: #555;
   }
 
-  @media (min-width: 768px){
-      .main-title h1{
-          font-size: 6rem;
-          font-weight: 800;
-          color: #555;
-      }
+  .main-title h2{
+      font-size: 5rem;
+      font-weight: 300;
+  }
+}
 
-      .main-title h2{
-          font-size: 4rem;
-          font-weight: 300;
-      }
+@media (min-width: 1200px){
 
-
+  .main-title h1{
+      font-size: 8rem;
+      font-weight: 900;
+      color: #555;
   }
 
-  @media (min-width: 1024px){
-
-      .main-title h1{
-          font-size: 7rem;
-          font-weight: 900;
-          color: #555;
-      }
-
-      .main-title h2{
-          font-size: 5rem;
-          font-weight: 300;
-      }
-
+  .main-title h2{
+      font-size: 5rem;
+      font-weight: 300;
   }
 
-  @media (min-width: 1200px){
-
-      .main-title h1{
-          font-size: 8rem;
-          font-weight: 900;
-          color: #555;
-      }
-
-      .main-title h2{
-          font-size: 5rem;
-          font-weight: 300;
-      }
-
-      .main-title{
-          text-align: center;
-          margin-top: 4rem;
-          margin-bottom: 4rem;
-      }
-
-
+  .main-title{
+      text-align: center;
+      margin-top: 4rem;
+      margin-bottom: 4rem;
   }
+}
 
-// .background {
-//     width: 100%;
-//     height: 100%;
-//     position: fixed;
-//     overflow: hidden;
-//     background-position: center center;
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//     background-image: url('../../assets/home-background-lighthouse.jpeg');
-//     display: flex;
-//     align-items: center;
-//     text-align: center;
-// }
 
-// .list-container {
-//     text-align: center;
-//     padding: 0;
-//     list-style-type: none;
-// }
-
-// li {
-// 	text-align: center;
-// }
-
-// .content {
-//     align-content: center;
-// }
-
-// .google-play {
-//     margin-left: auto;
-//     margin-right: auto;
-//     display: block;
-//     content: url('../../assets/download-google-play.png');
-// }
-
-// .apple {
-//     content: url('../../assets/download-app-store.png');
-// }
 
 

@@ -1,0 +1,24 @@
+@import '../../theme.scss';
+
+mat-tab-group {
+    text-align: center;
+    padding-top: 20px;
+}
+mat-card-header{
+  height: 450px;
+}
+
+img{
+  max-height: 450px;
+  align-self: center;
+}
+.images{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.logo{
+    max-width: 50%;
+    max-height: 50%;
+}

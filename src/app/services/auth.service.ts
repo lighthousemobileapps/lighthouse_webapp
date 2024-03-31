@@ -18,15 +18,17 @@ export class AuthService {
 
   public isLoggedIn: boolean = false;
   uid: string | undefined;
+  token: string | undefined;
 
 
   // userData: any;
 
   constructor(){
-    onAuthStateChanged(this.auth, (user) => {
+    onAuthStateChanged(this.auth, async (user) => {
       if (user) {
         this.isLoggedIn = true;
         this.uid = user.uid;
+        this.token = await user.getIdToken(true);
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/auth.user
         // const uid = user.uid;

@@ -1,7 +1,10 @@
 <div fxFlex fxLayout="column" >
-  <div fxFlex fxLayoutAlign="center">
-    <h2>{{videoName}}</h2>
+  <div class="header-container" fxFlex fxLayout="row" >
+    <button mat-icon-button class="return" (click)="returnToRecordings()">
+      <mat-icon (click)="returnToRecordings()">arrow_back</mat-icon>
+    </button>
+    <h2 fxFlex="noshrink" >{{videoName}}</h2>
   </div>
-  <video layout-fill [src]="videoURL" type="video/mp4" controls="" autoplay="" name="media">
+  <video width="100%" [src]="videoURL" type="video/mp4" controls="" autoplay="" name="media">
   </video>
 </div>

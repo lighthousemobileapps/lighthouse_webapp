@@ -1,10 +1,10 @@
-import { ElementRef, Input, OnChanges, OnDestroy, SimpleChanges, ViewChild, inject } from '@angular/core';
+import { ElementRef, ViewChild, inject } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, NavigationEnd, Router, UrlSegment } from '@angular/router';
-import { StorageReference } from 'firebase/storage';
-import { url } from 'inspector';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
+
 import { RecordingsService } from 'src/app/services/recordings.service';
+
 
 
 @Component({
@@ -15,6 +15,7 @@ import { RecordingsService } from 'src/app/services/recordings.service';
 })
 export class ViewRecordingComponent implements OnInit{
 
+  constructor(private _location: Location){}
 
   @ViewChild('videoPlayer')
   videoPlayer!: ElementRef;
@@ -23,6 +24,12 @@ export class ViewRecordingComponent implements OnInit{
     console.log(this.videoURL);
     this.videoPlayer.nativeElement.play();
   }
+
+  returnToRecordings(){
+    this._location.back();
+  }
+
+
 
 
   router = inject(Router);

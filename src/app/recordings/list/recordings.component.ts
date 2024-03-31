@@ -25,6 +25,12 @@ export class RecordingsComponent implements OnInit{
 
   async loadData(){
    this.directories = await this.recordingsService.loadRecordings();
+   this.directories.sort((a,b) => {
+    const date1 = Date.parse(a.title.replace('-','/'));
+    console.log(date1);
+    const date2 = Date.parse(b.title.replace('-','/'));
+    return (date1 < date2) ? 1 : -1;
+   })
 
   }
 
@@ -36,47 +42,4 @@ export class RecordingsComponent implements OnInit{
     };
     this.router.navigate(['view-recording'], navigationExtras);
   }
-
-  // folders = [
-  //   {
-  //     name: '2024-03-26',
-  //     recordings: [
-  //       {
-  //         name: '2024-03-26-15-56-56.mp4',
-  //         date: '2024-03-26-15-56-56',
-  //       },
-  //       {
-  //         name: '2024-03-26-02-52-45.mp4',
-  //         date: '2024-03-26-02-52-45',
-  //       },
-  //   ]
-  //   },
-  //   {
-  //     name: '2024-03-25',
-  //     recordings: [
-  //       {
-  //         name: '2024-03-25-17-32-02.mp4',
-  //         date: '2024-03-25-17-32-02',
-  //       },
-  //       {
-  //         name: '2024-03-25-11-56-32.mp4',
-  //         date: '2024-03-25-11-56-32',
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     name: '2024-03-24',
-  //     recordings: [
-  //       {
-  //         name: '2024-03-24-05-09-32.mp4',
-  //         date: '2024-03-24-05-09-32',
-  //       },
-  //       {
-  //         name: '2024-03-24-34-57-32.mp4',
-  //         date: '2024-03-24-55-28-32',
-  //       },
-  //   ]
-  //   },
-  // ];
-
 }

@@ -22,15 +22,18 @@ export class HeaderComponent {
 
   public onOpenSidenav = () => {
     this.sidenavOpen.emit();
-    console.log(this.isOpened);
   }
 
-  public onToggleLogin() {
+  public login() {
+    if(!this.authService.isLoggedIn){
+      this.authService.signInWithGoogle();
+    }
+  }
+  public logout(){
     if(this.authService.isLoggedIn){
       this.authService.logout();
     }
-    else {
-      this.router.navigate(['login']);
-    }
+
   }
+
 }

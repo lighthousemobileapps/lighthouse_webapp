@@ -14,6 +14,7 @@ export class RecordingsService {
   storage: Storage = inject(Storage);
   authService: AuthService = inject(AuthService);
   uid = this.authService.uid;
+  token = this.authService.token;
   // user$ = authState(this.auth).pipe(filter(user  =>  user !== null), map(user  =>  user!));
 
   async loadRecordings(){
@@ -49,5 +50,9 @@ export class RecordingsService {
       return "";
     }
     return "";
+  }
+
+  async getLiveUrl(){
+    return `https://35.210.55.186/lighthouse?token=${this.token}/${this.uid}`;
   }
 }

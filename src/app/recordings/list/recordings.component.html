@@ -1,21 +1,18 @@
-<mat-list>
-  <mat-list-item *ngFor="let directory of directories">
+<div class="container">
+  <ng-container *ngFor="let directory of directories">
     <mat-expansion-panel (opened)="panelOpenState = true"
-                      (closed)="panelOpenState = false">
+    (closed)="panelOpenState = false">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          <mat-icon matListIcon>folder</mat-icon>
-          {{directory.title}}
+          <mat-icon class="folder-icon">folder</mat-icon>
+          <span >{{directory.title}}</span>
         </mat-panel-title>
       </mat-expansion-panel-header>
-      <mat-list>
-        <!-- <mat-list-item (click)="viewRecording(recording.ref)" *ngFor="let recording of directory.recordings"> -->
-        <mat-list-item routerLink="/view-recording" [state]="{ reference: recording.name }" *ngFor="let recording of directory.recordings">
-          <!-- <mat-icon matListIcon>file_download</mat-icon> -->
-          <h4 matListItemTitle>{{recording.name}}</h4>
-          <p matListItemLine>{{recording.date}}</p>
-        </mat-list-item>
-      </mat-list>
+        <mat-list>
+          <mat-list-item routerLink="/view-recording" [state]="{ reference: recording.name }" *ngFor="let recording of directory.recordings">
+            <span matListItemTitle>{{recording.name}}</span>
+          </mat-list-item>
+        </mat-list>
     </mat-expansion-panel>
-  </mat-list-item>
-</mat-list>
+  </ng-container>
+</div>

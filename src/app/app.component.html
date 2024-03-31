@@ -1,9 +1,8 @@
 <app-layout>
   <!-- <app-header [isOpened]="sidenav.opened" (sidenavToggle)="sidenav.toggle()"></app-header> -->
   <mat-sidenav-container autosize>
-    <mat-sidenav #sidenav [mode]="isSmallScreen ? 'over' : 'push'">
-      <!-- [mode]="isMobile ? 'over' : 'side'"  -->
-      <app-sidenav-list (sidenavClose)="sidenav.toggle()"></app-sidenav-list>
+    <mat-sidenav #sidenav opened hasBackdrop="false" [mode]="isSmallScreen ? 'over' : 'side'">
+      <app-sidenav-list (sidenavClose)="isSmallScreen ? sidenav.toggle() : {}"></app-sidenav-list>
     </mat-sidenav>
     <mat-sidenav-content>
       <app-header [isOpened]="sidenav.opened" (sidenavOpen)="sidenav.toggle()"></app-header>

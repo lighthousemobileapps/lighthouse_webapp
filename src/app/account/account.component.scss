@@ -4,39 +4,37 @@ form {
     max-width: 300px;
     margin: auto;
     padding: 20px;
-  
+
     .header {
       margin-bottom: 15px;
       font-size: 1.2em;
       font-weight: bold;
       align-content: center;
     }
-  
-    mat-form-field {
-      width: 100%;
-    }
-  
+
+
+
     .actions {
       a {
         text-decoration: none;
         color: white;
       }
-  
+
       button {
         display: block;
         margin: 15px 0;
         width: 100%;
       }
-  
+
       .separator {
         text-align: center;
         position: relative;
-  
+
         span {
           background: rgb(173, 170, 170);
           padding: 10px;
         }
-  
+
         ::before {
           content: "";
           position: absolute;
@@ -51,4 +49,15 @@ form {
         }
       }
     }
+}
+
+.container{
+  margin: 20px;
+}
+
+mat-card {
+  margin: 10px;
+}
+mat-form-field {
+  width: 100%;
 }
