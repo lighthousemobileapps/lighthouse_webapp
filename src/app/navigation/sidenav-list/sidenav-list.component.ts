@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, OnDestroy, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-sidenav-list',
@@ -19,7 +19,16 @@ export class SidenavListComponent implements OnInit {
   constructor(){}
 
   ngOnInit(): void {  }
+  isSmallScreen: boolean = false;
 
-  public onCloseSidenav = () => this.sidenavClose.emit();
 
+  public onCloseClicked = () => this.sidenavClose.emit();
+
+  public onMenuItemClicked = () => this.isSmallScreen ? this.sidenavClose.emit() : {};
+
+
+  @HostListener('window:resize', ['$event'])
+  onResize(){
+    this.isSmallScreen = window.innerWidth < 959;
+  }
 }

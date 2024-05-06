@@ -14,7 +14,7 @@ a {
     cursor: pointer;
 }
 a:hover, a:active {
-    color: lightgray;
+    color: white;
 }
 
 button:hoover {
@@ -27,13 +27,19 @@ button:hoover {
     max-height: 50px;
     content: url('../../../assets/ic_launcher-playstore.png');
 }
+mat-toolbar {
+  background: $primary-color-light;
+  color: white;
+
+}
+
 mat-icon {
     cursor: pointer;
     max-height: 50px;
 }
 
 h1 {
-    color: lightgray;
+    color: white;
     text-align: center;
     width:200px;
     cursor: pointer;
@@ -54,3 +60,5 @@ h1 {
         border-radius: 0px;
     }
 }
+
+

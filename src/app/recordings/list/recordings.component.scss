@@ -1,3 +1,20 @@
+@import '../../../theme.scss';
+
+
 .folder-icon{
   margin-right: 5px;
 }
+
+
+mat-icon{
+  color: $warn-color;
+}
+// .mat-expansion-panel-content{
+//   background: #BB8493;
+// }
+// mat-expansion-panel-header{
+//   margin: 5px;
+//   // box-shadow: #DBAFA0;
+//   background: #704264;
+//   color: white;
+// }

@@ -53,6 +53,7 @@ export class RecordingsService {
   }
 
   async getLiveUrl(){
-    return `https://35.210.55.186/lighthouse?token=${this.token}/${this.uid}`;
+    return `http://localhost/dash/test.mpd`;
+    // return `https://35.210.55.186/lighthouse?token=${this.token}/${this.uid}`;
   }
 }

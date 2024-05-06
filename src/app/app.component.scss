@@ -3,11 +3,19 @@
 mat-sidenav-container, mat-sidenav-content, mat-sidenav {
     height: 100%;
 }
- 
+
+
 mat-sidenav {
-    width: 200px;
+  width: 200px;
+  color: $warn-color;
 }
- 
+
+mat-sidenav-content{
+  background: radial-gradient(to bottom ,
+  #ffffff 95%,
+  #80d6ff 100%);
+}
+
 main {
     padding: 0px;
 }

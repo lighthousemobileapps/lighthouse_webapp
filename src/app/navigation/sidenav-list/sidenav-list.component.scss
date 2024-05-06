@@ -4,20 +4,17 @@ a{
     text-decoration: none;
     color: white;
 }
-
-a:hover, a:active{
-    color: lightgray;
-}
-
 .nav-caption{
-    display: inline-block;
-    padding-left: 6px;
+  display: inline-block;
+  padding-left: 6px;
+  color: $warn-color;
 }
-
 .profiler {
     background-color: transparent;
 }
-
+mat-icon{
+  color: $warn-color;
+}
 @media(max-width: 959px){
   mat-toolbar{
       border-radius: 0px;

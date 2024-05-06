@@ -4,18 +4,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 html{
   font-size: 62.5%; /* 1rem = 10px */
+  // background: (to bottom, #ff7f50 0%, #ffc107 40%, #ffa07a 70%, #d62828 100%);
+
 }
 
 body{
+  height: 100vh;
+  margin: 0;
   font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.7;
   color: #777;
-  margin: 20px;
+  padding: 20px;
 
 }
 
