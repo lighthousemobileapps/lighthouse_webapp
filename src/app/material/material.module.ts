@@ -16,6 +16,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatRadioButton } from "@angular/material/radio";
 import { MatSlideToggle } from "@angular/material/slide-toggle";
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 
@@ -39,6 +40,7 @@ import { MatSlideToggle } from "@angular/material/slide-toggle";
     MatExpansionModule,
     MatRadioButton,
     MatSlideToggle,
+    MatTooltipModule,
   ],
   exports: [
     MatTabsModule,
@@ -57,6 +59,7 @@ import { MatSlideToggle } from "@angular/material/slide-toggle";
     MatExpansionModule,
     MatRadioButton,
     MatSlideToggle,
+    MatTooltipModule,
   ]
 })
 export class MaterialModule { }

@@ -172,3 +172,4 @@ $secondary-color-dark: mat.get-theme-color($lighthouse-theme-dark, primary, 200)
 $secondary-color-light: mat.get-theme-color($lighthouse-theme-light, primary, 200);
 $accent-color: mat.get-theme-color($lighthouse-theme-light, accent, 500);
 $warn-color: mat.get-theme-color($lighthouse-theme-light, warn, 500);
+$warn-color-dark: mat.get-theme-color($lighthouse-theme-light, warn, 900);

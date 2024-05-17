@@ -7,12 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  stars: number[];
+  mountains: number[];
+  waves: number[];
+
+
+  constructor() {
+    this.stars = Array(60).fill(60, 1).map((x,i)=>i);
+    this.mountains = Array(4).fill(4, 1).map((x,i)=>i);
+    this.waves = Array(30).fill(30, 1).map((x,i)=>i);
+   }
 
   ngOnInit(): void {
   }
 
-  // public handleCarouselEvents(event:any) {
-	// 	console.log(event);
-	// }
+
 }
