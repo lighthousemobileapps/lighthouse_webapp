@@ -33,19 +33,11 @@ export class ViewRecordingComponent implements OnInit{
 
 
   router = inject(Router);
-  // ref: StorageReference | undefined;
   recordingsService = inject(RecordingsService);
   videoURL: string = '';
   videoName: string = '';
 
-  // constructor(){
-  //   const currentState = this.router.lastSuccessfulNavigation?.extras.state;
-  //   if(currentState){
-  //     console.log(currentState['reference']);
-  //     this.videoName = currentState['reference']
-  //     this.getDownloadUrl();
-  //   }
-  // }
+
 
 
   ngOnInit(): void {

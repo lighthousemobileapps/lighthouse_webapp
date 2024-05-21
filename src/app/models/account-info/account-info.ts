@@ -1,5 +1,5 @@
 export interface AccountInfo {
   name: string;
-  newsletter: boolean;
+  darkMode: boolean;
   account_type: string;
 }

@@ -1,12 +1,9 @@
 import { NgModule, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { CreateAccountComponent } from '../create-account/create-account.component';
 import { OfferingsComponent } from '../offerings/offerings.component';
-import { SupportComponent } from '../support/support.component';
 import { HomeComponent } from '../home/home.component';
 import { LoginComponent } from '../login/login.component';
-// import { VerifyEmailComponent } from '../verify-email/verify-email.component';
 import { AccountComponent } from '../account/account.component';
 import { AuthGuard,
   redirectLoggedInTo,
@@ -26,11 +23,9 @@ const routes: Routes = [
   { path: 'live', component: LiveComponent, canActivate: [AuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'recordings', component: RecordingsComponent, canActivate: [AuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'view-recording', component: ViewRecordingComponent, canActivate: [AuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
-  { path: 'features', component: OfferingsComponent },
+  { path: 'offerings', component: OfferingsComponent },
   { path: 'account', component: AccountComponent, canActivate: [() => inject(AuthService).isLoggedIn]},
-  { path: 'create-account', component: CreateAccountComponent },
   { path: 'login', component: LoginComponent, canActivate: [AuthGuard], data: {authGuardPipe: redirectLoggedInToHome} },
-  { path: 'support', component: SupportComponent },
   { path: 'terms', component: TermsAndConditionsComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent }
 ];

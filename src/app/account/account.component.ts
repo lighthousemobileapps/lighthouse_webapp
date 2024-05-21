@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { AccountInfo } from "../models/account-info/account-info";
 import { AccountService } from '../services/account.service';
 import { MatFormFieldModule, FloatLabelType } from '@angular/material/form-field';
+import { ThemeService } from '../services/theme.service';
 
 
 @Component({
@@ -14,19 +15,20 @@ import { MatFormFieldModule, FloatLabelType } from '@angular/material/form-field
 export class AccountComponent {
 
   accountService = inject(AccountService);
-  newsletterControl = new FormControl(false);
+  themeService = inject(ThemeService);
+  themeControl = new FormControl(false);
   accountTypeControl = new FormControl('basic' as FloatLabelType);
 
   settingsForm: FormGroup  = this._formBuilder.group(
     {
-      newsletter: this.newsletterControl,
+      theme: this.themeControl,
       account_type: this.accountTypeControl,
     }
   );
 
   accountInfo: AccountInfo = {
     name: '',
-    newsletter: false,
+    darkMode: false,
     account_type: '',
   }
 
@@ -37,10 +39,13 @@ export class AccountComponent {
     this.accountService.update(this.accountInfo);
     this.accountInfo = {
       name: '',
-      // name: this.settingsForm.controls.name.value,
-      newsletter: this.settingsForm.controls.newsletter.value,
+      darkMode: this.settingsForm.controls.theme.value,
       account_type: this.settingsForm.controls.accountType.value,
     }
+  }
+
+  toggleDarkMode(){
+    this.themeService.toggleDarkMode();
   }
 
 }

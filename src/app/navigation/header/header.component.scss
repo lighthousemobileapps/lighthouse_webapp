@@ -5,6 +5,15 @@
     justify-content: center;
     align-items: center;
 }
+h1 {
+  color: white;
+  text-align: center;
+  width: 200px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 a {
     position: relative;
     text-decoration: none;
@@ -30,23 +39,19 @@ button:hoover {
 mat-toolbar {
   background: $primary-color-light;
   color: white;
+}
 
+mat-toolbar h1{
+  font-weight: 500 !important;
+  font-size: 35px !important;
 }
 
 mat-icon {
     cursor: pointer;
-    max-height: 50px;
+    height: 40px;
 }
 
-h1 {
-    color: white;
-    text-align: center;
-    width:200px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .navigation-items{
     list-style-type: none;

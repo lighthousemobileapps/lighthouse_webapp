@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, OnDestroy, HostListener } from '@angular/core';
+import { Component, Output, EventEmitter, OnDestroy, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-sidenav-list',
@@ -6,19 +6,14 @@ import { Component, OnInit, Output, EventEmitter, OnDestroy, HostListener } from
   styleUrls: ['./sidenav-list.component.scss']
 })
 
-export class SidenavListComponent implements OnInit {
+export class SidenavListComponent {
 
   @Output() sidenavClose = new EventEmitter();
 
-  // mediaSubscription: Subscription;
   isSidenavOpen = true;
-  // isDesktop = true;
-  // sidenavMode = 'side';
-  // private activeMediaQuery = '';
 
   constructor(){}
 
-  ngOnInit(): void {  }
   isSmallScreen: boolean = false;
 
 

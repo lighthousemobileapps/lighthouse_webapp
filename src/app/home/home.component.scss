@@ -12,16 +12,8 @@ $stripe: $warn-color-dark;
 $lightSpeed: 10s;
 $boatSpeed: 100s;
 
-// html,
-// body {
-// 	height: 100%;
-// 	width: 100%;
-// 	padding: 0;
-// 	overflow: hidden;
-// }
-// html {
-// 	box-sizing: border-box;
-// }
+
+
 *,
 *:before,
 *:after {
@@ -36,8 +28,10 @@ $boatSpeed: 100s;
   position: absolute;
 }
 .scene {
+  margin: auto;
   width: 100%;
   height: 100%;
+  min-height: 865px;
   overflow: hidden;
 }
 .background {
@@ -52,6 +46,38 @@ $boatSpeed: 100s;
     $medium 60%,
     $aqua 90%
   );
+}
+.content{
+  margin: 25px;
+  z-index: 5;
+  height: 100%;
+  width: 100%;
+}
+h1 {
+  color: white;
+  text-align: center;
+  white-space: nowrap;
+  margin: 15px;
+  // z-index: 2;
+}
+.info{
+  margin-top: 60px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  margin-right: 15px;
+  // z-index: 2;
+}
+button {
+  margin: 15px;
+  width: 100%;
+  color: white;
+  white-space: nowrap;
+}
+a{
+  margin: 15px;
+  width: 100%;
+  color: white;
+  white-space: nowrap;
 }
 .mountains {
   width: 100%;

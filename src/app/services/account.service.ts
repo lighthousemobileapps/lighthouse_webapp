@@ -29,15 +29,8 @@ export class AccountService {
 
       const accountInfo = {
         'name' : info.name,
-        // 'date_of_birth' : info.date_of_birth,
-        // 'sex' : info.sex,
-        'newsletter' : info.newsletter,
+        'dark_mode' : info.darkMode,
         'account_type' : info.account_type,
-        // 'vehicle_type' : info.vehicle_type,
-        // 'plan_established' : info.plan_established,
-        // 'plan_expires' : info.plan_expires,
-        // 'auto_renew' : info.auto_renew,
-        // 'country' : info.country,
       };
 
       // const userRef = collection(this.firestore, `users/${this.currUser.uid}`);

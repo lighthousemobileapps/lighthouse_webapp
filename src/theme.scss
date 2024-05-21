@@ -144,13 +144,17 @@ $lighthouse-primary-light: mat.define-palette($primary-map-light, 500);
 $lighthouse-accent:  mat.define-palette($accent-map, 500);
 $lighthouse-warn:    mat.define-palette($warning-map, 500);
 
+$typography-config: mat.define-typography-config(
+  $font-family: 'Lora',
+);
+
 $lighthouse-theme-dark: mat.define-dark-theme((
   color: (
     primary: $lighthouse-primary-dark,
     accent: $lighthouse-accent,
     warn: $lighthouse-warn
   ),
-  typography: mat.define-typography-config(),
+  typography: $typography-config,
   density: 0,
 ));
 $lighthouse-theme-light: mat.define-light-theme((
@@ -159,11 +163,14 @@ $lighthouse-theme-light: mat.define-light-theme((
     accent: $lighthouse-accent,
     warn: $lighthouse-warn
   ),
-  typography: mat.define-typography-config(),
+  typography: $typography-config,
   density: 0,
 ));
 @include mat.all-component-themes($lighthouse-theme-light);
-// @include mat.mat-button-theme($lighthouse-theme-dark);
+.darkTheme{
+  @include mat.all-component-colors($lighthouse-theme-dark);
+}
+
 
 
 $primary-color-dark: mat.get-theme-color($lighthouse-theme-dark, primary, 500);

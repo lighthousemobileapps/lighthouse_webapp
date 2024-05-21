@@ -1,20 +1,17 @@
  <mat-nav-list>
     <a mat-list-item>
-        <!-- <button  mat-icon-button fxFlex fxLayoutAlign="end" (click)="onToggleSidenav()"> -->
             <mat-icon fxFlex fxLayoutAlign="end" (click)="onCloseClicked()">close</mat-icon>
-        <!-- </button> -->
     </a>
 
     <a mat-list-item (click)="onMenuItemClicked()" routerLink="/home">
         <mat-icon>home</mat-icon>
         <span class="nav-caption">Home</span>
     </a>
-    <a mat-list-item (click)="onMenuItemClicked()" routerLink="/features">
+    <a mat-list-item (click)="onMenuItemClicked()" routerLink="/offerings">
         <mat-icon>local_offer</mat-icon>
         <span class="nav-caption">Offerings</span>
     </a>
-    <!-- <a mat-list-item disabled="true" (click)="onMenuItemClicked()" routerLink="/live"> -->
-    <a mat-list-item disabled="true" matTooltip=" Feature unavailable">
+    <a mat-list-item disabled="true" matTooltip=" Currently unavailable">
         <mat-icon>live_tv</mat-icon>
         <span class="nav-caption">Watch Live</span>
     </a>

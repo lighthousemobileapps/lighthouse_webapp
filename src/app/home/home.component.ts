@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent  {
 
   stars: number[];
   mountains: number[];
@@ -17,9 +17,6 @@ export class HomeComponent implements OnInit {
     this.mountains = Array(4).fill(4, 1).map((x,i)=>i);
     this.waves = Array(30).fill(30, 1).map((x,i)=>i);
    }
-
-  ngOnInit(): void {
-  }
 
 
 }
