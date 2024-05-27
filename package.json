@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -24,6 +24,7 @@
     "@angular/router": "~17.3.1",
     "@videogular/ngx-videogular": "^8.0.0",
     "dashjs": "^4.7.4",
+    "express": "^4.19.2",
     "firebase": "^10.9.0",
     "hls.js": "^1.5.7",
     "node": "^21.7.1",
