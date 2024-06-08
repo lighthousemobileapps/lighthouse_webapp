@@ -4,17 +4,12 @@
 .folder-icon{
   margin-right: 5px;
 }
-
-
 mat-icon{
   color: $warn-color;
 }
-// .mat-expansion-panel-content{
-//   background: #BB8493;
-// }
-// mat-expansion-panel-header{
-//   margin: 5px;
-//   // box-shadow: #DBAFA0;
-//   background: #704264;
-//   color: white;
-// }
+mat-list-item{
+  cursor: pointer !important;
+}
+mat-list-item:hover{
+  background-color: rgba(0, 0, 0, 0.04);
+}

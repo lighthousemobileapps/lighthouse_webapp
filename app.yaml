@@ -1,13 +1,21 @@
-# runtime: python39
-# entrypoint: gunicorn -b :$PORT main:app
-# env_variables:
-#   GINICORN_PORT: 8080
-# runtime_config:
-#       operating_system: "ubuntu22"
-# handlers:
-# - url: /.*
-#   static_files: dist/lighthouse-webapp/index.html
-#   upload: dist/lighthouse-webapp/index.html
-# - url: /
-#   static_dir: dist/lighthouse-webapp
-runtime: nodejs20
+runtime: python39
+handlers:
+- url: /
+  static_files: dist/lighthouse-webapp/index.html
+  upload: dist/lighthouse-webapp/index.html
+  secure: always
+- url: /(.*)
+  static_files: dist/lighthouse-webapp/index.html
+  upload: dist/lighthouse-webapp/index.html
+  secure: always
+- url: /
+  static_dir: dist/lighthouse-webapp
+  secure: always
+- url: /(.*\.css)
+  static_files: dist/lighthouse-webapp/\1
+  upload: dist/lighthouse-webapp/(.*\.css)
+  secure: always
+- url: /(.*\.html)
+  static_files: dist/lighthouse-webapp/\1
+  upload: dist/lighthouse-webapp/(.*\.html)
+  secure: always

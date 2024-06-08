@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/lighthouse-webapp",
+            "outputPath": "dist/lighthouse-webapp/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -104,6 +104,66 @@
               "includePaths": ["node_modules/"]
             }
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/lighthouse-webapp/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@angular-devkit/build-angular:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "lighthouse-webapp:build:development",
+              "serverTarget": "lighthouse-webapp:server:development"
+            },
+            "production": {
+              "browserTarget": "lighthouse-webapp:build:production",
+              "serverTarget": "lighthouse-webapp:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@angular-devkit/build-angular:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "lighthouse-webapp:build:production",
+              "serverTarget": "lighthouse-webapp:server:production"
+            },
+            "development": {
+              "browserTarget": "lighthouse-webapp:build:development",
+              "serverTarget": "lighthouse-webapp:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
