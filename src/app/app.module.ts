@@ -17,7 +17,7 @@ import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { LoginComponent } from './login/login.component';
 import { AccountComponent } from './account/account.component';
-import { environment } from 'src/environments/environment';
+import { environment } from '../environments/environment.prod';
 import { LiveComponent } from './live/live.component';
 import { PrivacyPolicyComponent } from './privacy/privacy-policy.component';
 import { TermsAndConditionsComponent } from './terms/terms.component';

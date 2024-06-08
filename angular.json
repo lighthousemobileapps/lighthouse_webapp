@@ -168,7 +168,6 @@
       }
     }
   },
-  "defaultProject": "lighthouse-webapp",
   "cli": {
     "analytics": false
   }
