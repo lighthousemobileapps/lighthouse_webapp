@@ -1,0 +1,122 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$primary-map-light: (
+  50 : #ffffff,
+  100 : #ffffff,
+  200 : #ffffff,
+  300 : #bdeaff,
+  400 : #9fe0ff,
+  500 : #80d6ff,
+  600 : #61ccff,
+  700 : #43c2ff,
+  800 : #24b8ff,
+  900 : #06aeff,
+  A100 : #ffffff,
+  A200 : #ffffff,
+  A400 : #b3e6ff,
+  A700 : #99deff,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #000000,
+      400 : #000000,
+      500 : #000000,
+      600 : #000000,
+      700 : #000000,
+      800 : #000000,
+      900 : #000000,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #000000,
+      A700 : #000000,
+  )
+);
+
+$warning-map: (
+  50 : #ffffff,
+  100 : #ffffff,
+  200 : #fce1e1,
+  300 : #f6a0a0,
+  400 : #f38484,
+  500 : #f06868,
+  600 : #ed4c4c,
+  700 : #ea3030,
+  800 : #e51717,
+  900 : #ca1414,
+  A100 : #ffffff,
+  A200 : #fff2f2,
+  A400 : #fd8e8e,
+  A700 : #f67c7c,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #000000,
+      400 : #000000,
+      500 : #000000,
+      600 : #ffffff,
+      700 : #ffffff,
+      800 : #ffffff,
+      900 : #ffffff,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #000000,
+      A700 : #000000,
+  )
+);
+
+
+$accent-map: (
+  50 : #ffffff,
+  100 : #ffffff,
+  200 : #ffffff,
+  300 : #f7fbd1,
+  400 : #f2f9b4,
+  500 : #edf798,
+  600 : #e8f57c,
+  700 : #e3f35f,
+  800 : #def043,
+  900 : #d9ee26,
+  A100 : #ffffff,
+  A200 : #ffffff,
+  A400 : #f9ffc3,
+  A700 : #f3fbae,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #000000,
+      400 : #000000,
+      500 : #000000,
+      600 : #000000,
+      700 : #000000,
+      800 : #000000,
+      900 : #000000,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #000000,
+      A700 : #000000,
+  )
+);
+
+$lighthouse-primary-light: mat.define-palette($primary-map-light, 500);
+$lighthouse-accent:  mat.define-palette($accent-map, 500);
+$lighthouse-warn:    mat.define-palette($warning-map, 500);
+
+$typography-config: mat.define-typography-config(
+  $font-family: 'Lora',
+);
+
+$lighthouse-theme-light: mat.define-light-theme((
+  color: (
+    primary: $lighthouse-primary-light,
+    accent: $lighthouse-accent,
+    warn: $lighthouse-warn
+  ),
+  typography: $typography-config,
+  density: 0,
+));
+@include mat.all-component-themes($lighthouse-theme-light);
