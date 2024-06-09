@@ -39,8 +39,8 @@ export class AccountComponent {
     this.accountService.update(this.accountInfo);
     this.accountInfo = {
       name: '',
-      darkMode: this.settingsForm.controls.theme.value,
-      account_type: this.settingsForm.controls.accountType.value,
+      darkMode: this.settingsForm.controls['theme'].value,
+      account_type: this.settingsForm.controls['accountType'].value,
     }
   }
 

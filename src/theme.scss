@@ -167,9 +167,9 @@ $lighthouse-theme-light: mat.define-light-theme((
   density: 0,
 ));
 @include mat.all-component-themes($lighthouse-theme-light);
-.darkTheme{
-  @include mat.all-component-colors($lighthouse-theme-dark);
-}
+// .darkTheme{
+//   @include mat.all-component-colors($lighthouse-theme-dark);
+// }
 
 
 
