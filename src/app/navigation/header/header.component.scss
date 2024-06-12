@@ -1,4 +1,4 @@
-@import '../../../theme.scss';
+@import '../../../styles.scss';
 
 .title {
     display: flex;
@@ -18,7 +18,7 @@ a {
     position: relative;
     text-decoration: none;
     text-align: center;
-    color: $accent-color;
+    // color: $secondary-color-light;
     padding: 10px;
     cursor: pointer;
 }
@@ -36,20 +36,21 @@ button:hoover {
     max-height: 50px;
     content: url('../../../assets/ic_launcher-playstore.png');
 }
-mat-toolbar {
-  background: $primary-color-light;
-  color: white;
-}
+// mat-toolbar {
+//   // background: #80d6ff;
+//   color: white;
+// }
 
-mat-toolbar h1{
-  font-weight: 500 !important;
-  font-size: 35px !important;
-}
+// mat-toolbar h1{
+//   font-weight: 500 !important;
+//   font-size: 35px !important;
+// }
 
-mat-icon {
-    cursor: pointer;
-    height: 40px;
-}
+// mat-icon {
+//   color: white;
+//   cursor: pointer;
+//   height: 40px;
+// }
 
 
 
@@ -60,10 +61,10 @@ mat-icon {
 }
 
 
-@media(max-width: 959px){
-    mat-toolbar{
-        border-radius: 0px;
-    }
-}
+// @media(max-width: 959px){
+//     mat-toolbar{
+//         border-radius: 0px;
+//     }
+// }
 
 

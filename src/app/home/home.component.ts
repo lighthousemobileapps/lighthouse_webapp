@@ -1,9 +1,16 @@
 import { Component } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
+import { MatButton, MatAnchor } from '@angular/material/button';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss'],
+    standalone: true,
+    imports: [NgFor, FlexModule, MatButton, RouterLink, MatAnchor, MatIcon]
 })
 export class HomeComponent  {
 

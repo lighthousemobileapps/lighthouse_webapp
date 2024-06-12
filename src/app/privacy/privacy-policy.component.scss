@@ -1,3 +1,4 @@
+@import '../../styles.scss';
 body {
   font-family: sans-serif;
   margin: 20px;
@@ -6,10 +7,13 @@ h1 {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
+  // color: $on-white-text-color;
+
 }
 
 p {
   margin-bottom: 10px;
+  // color: $primary-color-light;
 }
 
 ul {
@@ -18,4 +22,9 @@ ul {
 
 li {
   margin-bottom: 5px;
+}
+
+div{
+  // color: $on-white-text-color;
+
 }

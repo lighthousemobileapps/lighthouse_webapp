@@ -4,16 +4,23 @@ import { AccountInfo } from "../models/account-info/account-info";
 import { AccountService } from '../services/account.service';
 import { MatFormFieldModule, FloatLabelType } from '@angular/material/form-field';
 import { ThemeService } from '../services/theme.service';
+import { AuthService } from '../services/auth.service';
+import { MatButton } from '@angular/material/button';
+import { MatSlideToggle } from '@angular/material/slide-toggle';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 
 @Component({
-  selector: 'app-account',
-  templateUrl: './account.component.html',
-  styleUrls: ['./account.component.scss'],
-  providers: [AccountService]
+    selector: 'app-account',
+    templateUrl: './account.component.html',
+    styleUrls: ['./account.component.scss'],
+    providers: [AccountService],
+    standalone: true,
+    imports: [FlexModule, MatSlideToggle, MatButton]
 })
 export class AccountComponent {
 
+  authService = inject(AuthService);
   accountService = inject(AccountService);
   themeService = inject(ThemeService);
   themeControl = new FormControl(false);
@@ -32,6 +39,7 @@ export class AccountComponent {
     account_type: '',
   }
 
+
   constructor(private _formBuilder: FormBuilder){}
 
 
@@ -46,6 +54,10 @@ export class AccountComponent {
 
   toggleDarkMode(){
     this.themeService.toggleDarkMode();
+  }
+
+  deleteAccount(){
+    this.authService.delete();
   }
 
 }

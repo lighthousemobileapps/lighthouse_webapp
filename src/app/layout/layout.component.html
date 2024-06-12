@@ -1,5 +1,17 @@
-<div fxLayout="row wrap" fxLayoutAlign="center center" class="layout-wrapper"> 
-    <div fxFlex="100%" fxFlex.lt-md="100%" class="flex-wrapper"> 
-        <ng-content></ng-content> 
-    </div> 
-</div>
+<!-- <div fxLayout="row wrap" fxLayoutAlign="center center" class="layout-wrapper">
+    <div fxFlex="100%" fxFlex.lt-md="100%" class="flex-wrapper">
+        <ng-content></ng-content>
+    </div>
+</div> -->
+
+<mat-sidenav-container class="sidenav-container" autosize>
+  <mat-sidenav class="sidenav" #sidenav opened hasBackdrop="false" [mode]="isSmallScreen ? 'over' : 'side'">
+    <app-sidenav-list (sidenavClose)="sidenav.toggle()"></app-sidenav-list>
+  </mat-sidenav>
+  <mat-sidenav-content fxLayout="column">
+    <app-header [isOpened]="sidenav.opened" (sidenavOpen)="sidenav.toggle()"></app-header>
+    <main fxFlex>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

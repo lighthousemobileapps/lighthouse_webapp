@@ -1,4 +1,4 @@
-@import '../../theme.scss';
+@import '../../styles.scss';
 
 $x-dark: #29284c;
 $dark: #4c4b82;
@@ -8,9 +8,9 @@ $x-light: #d6d9f6;
 $aqua: #75e2fa;
 $grey: #9e9ebe;
 $yellow: #f7f2b4;
-$stripe: $warn-color-dark;
+$stripe: red; //$tertiary-color-dark;
 $lightSpeed: 10s;
-$boatSpeed: 100s;
+$boatSpeed: 150s;
 
 
 

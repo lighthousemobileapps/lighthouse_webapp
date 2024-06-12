@@ -1,13 +1,15 @@
 <app-layout>
-  <mat-sidenav-container autosize [ngClass]="{'darkTheme': isDarkMode}">
+  <router-outlet></router-outlet>
+
+  <!-- <mat-sidenav-container autosize>
     <mat-sidenav #sidenav opened hasBackdrop="false" [mode]="isSmallScreen ? 'over' : 'side'">
       <app-sidenav-list (sidenavClose)="sidenav.toggle()"></app-sidenav-list>
     </mat-sidenav>
-    <mat-sidenav-content  fxLayout="column">
+    <mat-sidenav-content class="content" fxLayout="column">
       <app-header [isOpened]="sidenav.opened" (sidenavOpen)="sidenav.toggle()"></app-header>
       <main fxFlex>
         <router-outlet></router-outlet>
       </main>
     </mat-sidenav-content>
-  </mat-sidenav-container>
+  </mat-sidenav-container> -->
 </app-layout>

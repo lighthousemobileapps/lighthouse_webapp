@@ -1,16 +1,19 @@
 import { inject } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { RecordingsService } from '../services/recordings.service';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 
 
 
 
 @Component({
-  selector: 'app-live',
-  templateUrl: './live.component.html',
-  styleUrls: ['./live.component.scss'],
-  providers: [RecordingsService]
+    selector: 'app-live',
+    templateUrl: './live.component.html',
+    styleUrls: ['./live.component.scss'],
+    providers: [RecordingsService],
+    standalone: true,
+    imports: [FlexModule]
 })
 export class LiveComponent implements OnInit {
 

@@ -8,6 +8,9 @@
       "schematics": {
         "@schematics/angular:application": {
           "strict": true
+        },
+        "@schematics/angular:component": {
+          "style": "scss"
         }
       },
       "root": "",
@@ -22,13 +25,13 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "src/theme.scss"
+              "src/styles.scss"
             ],
             "scripts": [
             ]
@@ -96,8 +99,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "src/theme.scss"
+              "src/styles.scss"
             ],
             "scripts": [],
             "stylePreprocessorOptions": {

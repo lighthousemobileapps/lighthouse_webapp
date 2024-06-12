@@ -1,11 +1,11 @@
-@import '../../../theme.scss';
+@import '../../../styles.scss';
 
 
 .folder-icon{
   margin-right: 5px;
 }
 mat-icon{
-  color: $warn-color;
+  // color: $tertiary-color-light;
 }
 mat-list-item{
   cursor: pointer !important;

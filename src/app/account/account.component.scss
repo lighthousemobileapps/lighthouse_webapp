@@ -1,70 +1,31 @@
-@import '../../theme.scss';
-
-form {
-    max-width: 300px;
-    margin: auto;
-    padding: 20px;
-
-    .header {
-      margin-bottom: 15px;
-      font-size: 1.2em;
-      font-weight: bold;
-      align-content: center;
-    }
+@import '../../styles.scss';
 
 
-
-    .actions {
-      a {
-        text-decoration: none;
-        color: white;
-      }
-
-      button {
-        display: block;
-        margin: 15px 0;
-        width: 100%;
-      }
-
-      .separator {
-        text-align: center;
-        position: relative;
-
-        span {
-          background: rgb(173, 170, 170);
-          padding: 10px;
-        }
-
-        ::before {
-          content: "";
-          position: absolute;
-          width: 100%;
-          left: 0px;
-          top: calc(50% - 1px);
-          z-index: -1;
-          border-width: 1px;
-          border-style: solid;
-          border-color: rgb(229, 232, 237);
-          border-image: initial;
-        }
-      }
-    }
-}
 
 .container{
-  margin: 20px;
+  padding: 20px;
 }
 
-.form-section{
-  margin-top: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 20px;
-}
-
-mat-card {
-  margin: 10px;
-}
-mat-form-field {
+.settings-container{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 900px;
   width: 100%;
+
+}
+
+.setting-item{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+button{
+  width: 200px;
+}
+.delete-button{
+  // background: $tertiary-color-light !important;
+  // color: white !important;
 }

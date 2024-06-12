@@ -1,10 +1,14 @@
 import { Component, HostListener, OnInit, inject } from '@angular/core';
 import { ThemeService } from './services/theme.service';
-
+import { MatSidenav, MatSidenavContainer,  } from "@angular/material/sidenav";
+import { RouterOutlet } from '@angular/router';
+import { LayoutComponent } from './layout/layout.component';
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    standalone: true,
+    imports: [LayoutComponent, RouterOutlet]
 })
 
 

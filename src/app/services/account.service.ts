@@ -36,7 +36,10 @@ export class AccountService {
       // const userRef = collection(this.firestore, `users/${this.currUser.uid}`);
       setDoc(doc(this.firestore, `users/${this.currUser.uid}`), {...accountInfo});
 
+  }
 
+  public delete(){
+    this.authService.delete()
   }
 
 }

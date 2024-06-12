@@ -1,21 +1,24 @@
-runtime: python39
-handlers:
-- url: /
-  static_files: dist/lighthouse-webapp/index.html
-  upload: dist/lighthouse-webapp/index.html
-  secure: always
-- url: /(.*)
-  static_files: dist/lighthouse-webapp/index.html
-  upload: dist/lighthouse-webapp/index.html
-  secure: always
-- url: /
-  static_dir: dist/lighthouse-webapp
-  secure: always
-- url: /(.*\.css)
-  static_files: dist/lighthouse-webapp/\1
-  upload: dist/lighthouse-webapp/(.*\.css)
-  secure: always
-- url: /(.*\.html)
-  static_files: dist/lighthouse-webapp/\1
-  upload: dist/lighthouse-webapp/(.*\.html)
-  secure: always
+# runtime: python39
+# handlers:
+# - url: /
+#   static_files: dist/lighthouse-webapp/index.html
+#   upload: dist/lighthouse-webapp/index.html
+#   secure: always
+# - url: /(.*)
+#   static_files: dist/lighthouse-webapp/index.html
+#   upload: dist/lighthouse-webapp/index.html
+#   secure: always
+# - url: /
+#   static_dir: dist/lighthouse-webapp
+#   secure: always
+# - url: /(.*\.css)
+#   static_files: dist/lighthouse-webapp/\1
+#   upload: dist/lighthouse-webapp/(.*\.css)
+#   secure: always
+# - url: /(.*\.html)
+#   static_files: dist/lighthouse-webapp/\1
+#   upload: dist/lighthouse-webapp/(.*\.html)
+#   secure: always
+
+
+runtime: nodejs20

@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 const GoogleIcon =
 `
@@ -14,9 +15,11 @@ const GoogleIcon =
 `;
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss'],
+    standalone: true,
+    imports: [FlexModule]
 })
 export class LoginComponent {
 

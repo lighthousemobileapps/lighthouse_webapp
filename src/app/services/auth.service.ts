@@ -1,5 +1,5 @@
 import { Injectable, NgZone, OnDestroy, inject } from '@angular/core';
-import { Auth, onAuthStateChanged , GoogleAuthProvider, signInWithPopup, user, User } from "@angular/fire/auth";
+import { Auth, onAuthStateChanged , GoogleAuthProvider, signInWithPopup, user, deleteUser, reauthenticateWithCredential, User } from "@angular/fire/auth";
 import { Firestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 // import { User, getAuth, onAuthStateChanged } from 'firebase/auth';
@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
 export class AuthService {
 
   auth: Auth = inject(Auth);
-  user$ = user(this.auth);
+  // user = user(this.auth);
   router: Router = inject(Router)
 
   private provider = new GoogleAuthProvider();
@@ -19,6 +19,7 @@ export class AuthService {
   public isLoggedIn: boolean = false;
   uid: string | undefined;
   token: string | undefined;
+  user: User | undefined;
 
 
   // userData: any;
@@ -26,6 +27,7 @@ export class AuthService {
   constructor(){
     onAuthStateChanged(this.auth, async (user) => {
       if (user) {
+        this.user = user;
         this.isLoggedIn = true;
         this.uid = user.uid;
         this.token = await user.getIdToken(true);
@@ -35,6 +37,7 @@ export class AuthService {
         // ...
       } else {
         this.isLoggedIn = false;
+        this.user = undefined;
         // User is signed out
         // ...
       }
@@ -96,6 +99,17 @@ export class AuthService {
       localStorage.removeItem('user');
       this.router.navigate(['login']);
     });
+  }
+
+  async delete(){
+    if(this.user != undefined){
+      await deleteUser(this.user!).then(() =>{
+        this.router.navigate(['home']);
+      }).catch((error) =>{
+        error
+      })
+    }
+
   }
 
   // get isLoggedIn(): boolean {

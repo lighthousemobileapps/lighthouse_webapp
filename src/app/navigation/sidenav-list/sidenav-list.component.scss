@@ -1,4 +1,4 @@
-@import '../../../theme.scss';
+@import '../../../styles.scss';
 
 a{
     text-decoration: none;
@@ -7,13 +7,11 @@ a{
 .nav-caption{
   display: inline-block;
   padding-left: 6px;
-  color: $warn-color;
+  // color: $tertiary-color-light;
 }
-.profiler {
-    background-color: transparent;
-}
+
 mat-icon{
-  color: $warn-color;
+  // color: $tertiary-color-light;
 }
 @media(max-width: 959px){
   mat-toolbar{

@@ -1,4 +1,4 @@
-@import '../../../theme.scss';
+@import '../../../styles.scss';
 
 video {
   object-fit: contain;
@@ -31,9 +31,9 @@ video:-webkit-full-page-media {
 }
 
 button{
-  color: $warn-color;
+  // color: $tertiary-color-light;
 }
 h2{
   text-align: center;
-  color: $warn-color;
+  // color: $tertiary-color-light;
 }

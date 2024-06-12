@@ -4,14 +4,19 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { RecordingsService } from 'src/app/services/recordings.service';
+import { MatIcon } from '@angular/material/icon';
+import { MatIconButton } from '@angular/material/button';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 
 
 @Component({
-  selector: 'app-view-recording',
-  templateUrl: './view-recording.component.html',
-  styleUrls: ['./view-recording.component.scss'],
-  providers: [RecordingsService]
+    selector: 'app-view-recording',
+    templateUrl: './view-recording.component.html',
+    styleUrls: ['./view-recording.component.scss'],
+    providers: [RecordingsService],
+    standalone: true,
+    imports: [FlexModule, MatIconButton, MatIcon]
 })
 export class ViewRecordingComponent implements OnInit{
 
