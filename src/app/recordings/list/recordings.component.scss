@@ -1,15 +1,14 @@
-@import '../../../styles.scss';
+@use '../../../styles.scss' as styles;
 
 
-.folder-icon{
-  margin-right: 5px;
-}
-mat-icon{
-  // color: $tertiary-color-light;
-}
 mat-list-item{
   cursor: pointer !important;
 }
 mat-list-item:hover{
   background-color: rgba(0, 0, 0, 0.04);
+}
+.mat-icon{
+  color: styles.$secondary-icon-colour;
+  margin-right: 5px;
+
 }

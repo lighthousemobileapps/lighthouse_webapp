@@ -1,4 +1,4 @@
-@import '../../styles.scss';
+@use '../../styles.scss' as styles;
 
 $x-dark: #29284c;
 $dark: #4c4b82;
@@ -12,7 +12,10 @@ $stripe: red; //$tertiary-color-dark;
 $lightSpeed: 10s;
 $boatSpeed: 150s;
 
+.mat-icon {
+  color: styles.$primary-icon-colour;
 
+}
 
 *,
 *:before,

@@ -36,9 +36,6 @@
   z-index: 1;
 }
 
-mat-sidenav-content {
-  padding-right: 16px;
-}
 
 .sidenav-scroll-wrapper {
   height: calc(100dvh - 64px - 16px);
@@ -50,7 +47,7 @@ mat-sidenav-content {
 .sidenav-content {
   max-height: 100%;
   overflow-y: auto;
-  padding: 16px;
+  // padding: 16px;
   box-sizing: border-box;
   @media (pointer: fine) {
     &::-webkit-scrollbar {

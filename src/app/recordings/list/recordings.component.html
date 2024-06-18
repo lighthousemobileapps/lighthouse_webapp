@@ -4,13 +4,14 @@
     (closed)="panelOpenState = false">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          <mat-icon class="folder-icon">folder</mat-icon>
+          <mat-icon class="mat-icon">folder</mat-icon>
           <span >{{directory.title}}</span>
         </mat-panel-title>
       </mat-expansion-panel-header>
         <mat-list>
           <mat-list-item routerLink="/view-recording" [state]="{ reference: recording.name }" *ngFor="let recording of directory.recordings">
-            <span matListItemTitle>{{recording.name}}</span>
+            <mat-icon class="mat-icon">movie</mat-icon>
+            <span >{{recording.name}}</span>
           </mat-list-item>
         </mat-list>
     </mat-expansion-panel>

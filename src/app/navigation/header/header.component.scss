@@ -1,24 +1,14 @@
-@import '../../../styles.scss';
 
 .title {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-h1 {
-  color: white;
-  text-align: center;
-  width: 200px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 a {
     position: relative;
     text-decoration: none;
     text-align: center;
-    // color: $secondary-color-light;
     padding: 10px;
     cursor: pointer;
 }

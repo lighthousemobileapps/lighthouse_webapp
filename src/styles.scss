@@ -26,7 +26,7 @@ $dark-theme: m3-theme.$dark-theme;
   @include layout-component.theme($theme);
 
   // Add backwards compatibility styles for color variants
-  @include mat.color-variants-backwards-compatibility($theme);
+  // @include mat.color-variants-backwards-compatibility($theme);
 
   @media (prefers-color-scheme: dark) {
     @include mat.all-component-colors($dark-theme);
@@ -37,20 +37,32 @@ $dark-theme: m3-theme.$dark-theme;
     @include mat.color-variants-backwards-compatibility($dark-theme);
   }
 }
+html {
+  // Apply the light theme by default
+  @include mat.all-component-themes($theme);
+  @include layout-component.theme($theme);
+
+  @include mat.core-theme($theme);
+  @include mat.button-theme($theme);
+  // When using system variables, remember to provide values for them
+  // or uncomment the lines below to generate them from the theme.
+  @include mat.system-level-colors($theme);
+  // @include mat.system-level-typography(my-theme.$light-theme);
+}
+
 
 
 html,
 body {
   height: 100%;
-  @include mat.all-component-themes($theme);
-
-  // Components themes
-  @include layout-component.theme($theme);
 }
 body {
   margin: 0;
   // font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+$primary-icon-colour: mat.get-theme-color($theme, primary, 40);
+$secondary-icon-colour: mat.get-theme-color($theme, secondary, 60);
 
 // $primary-color-dark: mat.get-theme-color($_dark-theme, primary, 50);
 // $primary-color-light: #80d6ff;
