@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter, Input, inject } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { MatMenuTrigger, MatMenu, MatMenuItem } from '@angular/material/menu';

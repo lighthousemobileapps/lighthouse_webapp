@@ -3,12 +3,12 @@
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run lighthouse-webapp:serve-ssr",
-    "serve:ssr": "node dist/lighthouse-webapp/server/main.js",
+    "serve:ssr": "node dist/lighthouse-webapp/server/server.mjs",
     "build:ssr": "ng build && ng run lighthouse-webapp:server",
     "prerender": "ng run lighthouse-webapp:prerender"
   },
@@ -34,7 +34,6 @@
     "express": "^4.18.2",
     "firebase": "^10.9.0",
     "hls.js": "^1.5.7",
-    "node": "^21.7.1",
     "rxjs": "~7.8.0",
     "rxjs-compat": "^6.6.7",
     "tslib": "^2.6.2",

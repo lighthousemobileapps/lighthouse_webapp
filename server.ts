@@ -65,5 +65,3 @@ const moduleFilename = mainModule && mainModule.filename || '';
 if (moduleFilename === __filename || moduleFilename.includes('iisnode')) {
   run();
 }
-
-export default AppServerModule;

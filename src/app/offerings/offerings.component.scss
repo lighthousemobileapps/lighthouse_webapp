@@ -7,11 +7,17 @@ mat-tab-group {
 
 mat-card-header{
   height: 450px;
+  color: var(--sys-primary) !important;
+
 }
 
 mat-card{
   margin: 5px;
 
+}
+
+.mat-tab-label .mat-tab--active .mdc-tab__text-label{
+  color: var(--sys-primary) !important;
 }
 
 img{

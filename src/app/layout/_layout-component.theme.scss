@@ -4,19 +4,19 @@
   .sidenav-scroll-wrapper {
     background-color: mat.get-theme-color($theme, primary);
   }
-  .mat-icon{
+  mat-icon{
     color: mat.get-theme-color($theme, primary, 100);
   }
-  .mat-toolbar {
+  mat-toolbar {
     background: mat.get-theme-color($theme, primary, 80);
     color: mat.get-theme-color($theme, primary, 100);;
   }
-  .mat-toolbar h1{
+  mat-toolbar h1{
     font-family: 'Lora';
     font-weight: 800;
     font-size: 40px;
   }
-  .mat-nav-list a{
+  mat-nav-list a{
     color: mat.get-theme-color($theme, primary, 40);
   }
   // .mat-sidenav {

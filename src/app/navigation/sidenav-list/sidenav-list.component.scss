@@ -1,6 +1,5 @@
 @use '../../../styles.scss' as styles;
 
-
 a{
     text-decoration: none;
     color: white;
@@ -8,17 +7,19 @@ a{
 .nav-caption{
   display: inline-block;
   padding-left: 6px;
-  // color: $tertiary-color-light;
+  color: var(--sys-primary);
+
 }
 
 .close-icon{
   float: right;
 }
 .close-icon:hover{
-  background-color: lightgrey;
+  border-radius: 50%;
+  background-color: var(--sys-secondary-container); //#edeef0;
 }
-.mat-icon{
-  color: styles.$secondary-icon-colour;
+mat-icon{
+  color: var(--sys-error);//styles.$secondary-icon-colour;
 }
 @media(max-width: 959px){
   .mat-toolbar{
