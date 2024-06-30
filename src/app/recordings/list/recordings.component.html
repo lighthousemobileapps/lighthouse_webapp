@@ -4,14 +4,17 @@
     (closed)="panelOpenState = false">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          <mat-icon class="mat-icon">folder</mat-icon>
+          <mat-icon>folder</mat-icon>
           <span >{{directory.title}}</span>
         </mat-panel-title>
       </mat-expansion-panel-header>
         <mat-list>
-          <mat-list-item routerLink="/view-recording" [state]="{ reference: recording.name }" *ngFor="let recording of directory.recordings">
-            <mat-icon class="mat-icon">movie</mat-icon>
+          <mat-list-item  *ngFor="let recording of directory.recordings">
+            <mat-icon>movie</mat-icon>
             <span >{{recording.name}}</span>
+            <a class="download" [href]="recording.cloudPath" [download]="recording.name">
+              <mat-icon>download</mat-icon>
+            </a>
           </mat-list-item>
         </mat-list>
     </mat-expansion-panel>

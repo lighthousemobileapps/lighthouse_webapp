@@ -10,6 +10,7 @@ import { Recording } from '../models/recordings/recording';
 
 export class RecordingsService {
 
+
   // firestore: Firestore = inject(Firestore);
   storage: Storage = inject(Storage);
   authService: AuthService = inject(AuthService);
@@ -18,14 +19,18 @@ export class RecordingsService {
   // user$ = authState(this.auth).pipe(filter(user  =>  user !== null), map(user  =>  user!));
 
   async loadRecordings(){
-    // const uid = this.authService.uid;
     if(this.uid){
       const storageRef = ref(this.storage, (`users/${this.uid}`));
       const dirs: RecordingDirectory[] = [];
       const dirRefs = (await listAll(storageRef)).prefixes;
       dirRefs.forEach(async (dirRef) => {
         const dirItems = (await listAll(dirRef)).items;
-        const recordings: Recording[] = dirItems.map<Recording>((dirItemRef) => ({name: dirItemRef.name, date: new Date((dirItemRef.name.match(/\d{4}-\d{2}-\d{2}/) ?? [''])[0]), ref: dirItemRef, cloudPath: '', localPath: ''}));
+        // const recordings: Recording[] = dirItems.map<Recording>(  (dirItemRef) => ({ name: dirItemRef.name, date: new Date((dirItemRef.name.match(/\d{4}-\d{2}-\d{2}/) ?? [''])[0]), ref: dirItemRef, cloudPath: await getDownloadURL(dirItemRef), localPath: '' }));
+        const recordings: Recording[] = [];
+        for(const dirItemRef of dirItems){
+          const url = await getDownloadURL(dirItemRef);
+          recordings.push({ name: dirItemRef.name, date: new Date((dirItemRef.name.match(/\d{4}-\d{2}-\d{2}/) ?? [''])[0]), ref: dirItemRef, cloudPath: url, localPath: '' });
+        }
         const dir: RecordingDirectory = {title: dirRef.name, recordings: recordings };
         dirs.push(dir);
       });

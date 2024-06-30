@@ -48,4 +48,9 @@ export class RecordingsComponent implements OnInit{
     };
     this.router.navigate(['view-recording'], navigationExtras);
   }
+
+  // download(recording){
+  //   this.recordingsService.getDownloadUrl(recording).then((url) => {
+    // });
+  // }
 }

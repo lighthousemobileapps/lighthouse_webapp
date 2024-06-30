@@ -1,14 +1,25 @@
 @use '../../../styles.scss' as styles;
 
 
+mat-expansion-panel{
+  margin: 10px;
+}
+
 mat-list-item{
   cursor: pointer !important;
 }
 mat-list-item:hover{
   background-color: rgba(0, 0, 0, 0.04);
 }
-.mat-icon{
-  color: styles.$secondary-icon-colour;
+mat-icon{
+  color: var(--sys-secondary);
   margin-right: 5px;
+}
 
+.download{
+  float: right;
+}
+.download:hover{
+  border-radius: 50%;
+  color: var(--sys-surface-dim);
 }

@@ -1,4 +1,4 @@
-@import '../../styles.scss';
+// @import '../../styles.scss';
 
 
 
@@ -6,26 +6,20 @@
   padding: 20px;
 }
 
-.settings-container{
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  max-width: 900px;
-  width: 100%;
-
-}
-
-.setting-item{
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 100%;
-}
-
 button{
   width: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.logout-icon{
+  color: var(--sys-primary) !important;
 }
 .delete-button{
-  // background: $tertiary-color-light !important;
-  // color: white !important;
+  background-color: var(--sys-secondary) !important;
+  color: var(--sys-on-secondary) !important;
+
 }
+.delete-icon{
+  color: var(--sys-on-secondary) !important;
+}
+

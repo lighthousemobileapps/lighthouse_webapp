@@ -16,10 +16,10 @@ a{
 }
 .close-icon:hover{
   border-radius: 50%;
-  background-color: var(--sys-secondary-container); //#edeef0;
+  background-color: var(--sys-surface-dim);
 }
 mat-icon{
-  color: var(--sys-error);//styles.$secondary-icon-colour;
+  color: var(--sys-secondary);
 }
 @media(max-width: 959px){
   .mat-toolbar{

@@ -13,7 +13,7 @@ $lightSpeed: 10s;
 $boatSpeed: 150s;
 
 .mat-icon {
-  color: styles.$primary-icon-colour;
+  color: var(--sys-primary);
 
 }
 

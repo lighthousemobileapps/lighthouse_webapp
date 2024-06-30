@@ -1,5 +1,5 @@
-import { Injectable, NgZone, OnDestroy, inject } from '@angular/core';
-import { Auth, onAuthStateChanged , GoogleAuthProvider, signInWithPopup, user, deleteUser, reauthenticateWithCredential, User } from "@angular/fire/auth";
+import { Injectable, inject } from '@angular/core';
+import { Auth, onAuthStateChanged , GoogleAuthProvider, signInWithPopup, signOut, deleteUser, User } from "@angular/fire/auth";
 import { Firestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 // import { User, getAuth, onAuthStateChanged } from 'firebase/auth';
@@ -55,50 +55,16 @@ export class AuthService {
       this.router.navigate(['home']);
     });
   }
-  // async signUp(userRegistration: UserRegistration) {
-  //   return this.firebaseAuth.createUserWithEmailAndPassword(userRegistration.email, userRegistration.password)
-  //     .then((result) => {
-  //       /* Call the SendVerificaitonMail() function when new user sign
-  //       up and returns promise */
-  //       this.setUserData(result.user!, userRegistration);
-  //       this.router.navigate(['verify-email']);
-  //     }).catch((error) => {
-  //       window.alert(error.message)
-  //     })
-  // }
 
 
-      /* Setting up user data when sign in with username/password,
-  sign up with username/password and sign in with social auth
-  provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
-  // setUserData(user: firebase.User, userRegistration: UserRegistration) {
-
-  //   user.updateProfile({
-  //     displayName: userRegistration.fullName,
-  //   });
-
-  //   const userRef: AngularFirestoreDocument<any> = this.firestoreDB.doc(`users/${user.uid}`);
-
-  //   return userRef.set({
-  //     'name' : userRegistration.fullName,
-  //     'date_of_birth' : userRegistration.dateOfBirth,
-  //     'sex' : userRegistration.sex,
-  //     'account_type' : 'Basic',
-  //     'vehicle_type' : userRegistration.vehicleType,
-  //     'plan_established' : userRegistration.planEstablished,
-  //     'plan_expires' : userRegistration.planExpires,
-  //     'auto_renew' : userRegistration.autoRenew,
-  //     'country' : userRegistration.country,
-  //   }, {
-  //     merge: true
-  //   })
-  // }
-
-  logout(){
-    this.auth.signOut().then(() => {
-      localStorage.removeItem('user');
-      this.router.navigate(['login']);
-    });
+  async logout(){
+    if(this.user != undefined){
+      await signOut(this.auth).then(() =>{
+        this.router.navigate(['home']);
+      }).catch((error) =>{
+        error
+      })
+    };
   }
 
   async delete(){
@@ -111,10 +77,4 @@ export class AuthService {
     }
 
   }
-
-  // get isLoggedIn(): boolean {
-  //   const user = JSON.parse(localStorage.getItem('user')!);
-  //   // this.user = JSON.parse(token as string);
-  //   return user == null;
-  // }
 }

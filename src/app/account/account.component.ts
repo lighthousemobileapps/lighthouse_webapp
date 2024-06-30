@@ -6,6 +6,7 @@ import { MatFormFieldModule, FloatLabelType } from '@angular/material/form-field
 import { ThemeService } from '../services/theme.service';
 import { AuthService } from '../services/auth.service';
 import { MatButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
 import { FlexModule } from '@angular/flex-layout/flex';
 
@@ -16,7 +17,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./account.component.scss'],
     providers: [AccountService],
     standalone: true,
-    imports: [FlexModule, MatSlideToggle, MatButton]
+    imports: [FlexModule, MatSlideToggle, MatIcon, MatButton]
 })
 export class AccountComponent {
 
@@ -58,6 +59,10 @@ export class AccountComponent {
 
   deleteAccount(){
     this.authService.delete();
+  }
+
+  logout(){
+    this.authService.logout();
   }
 
 }
