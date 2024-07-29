@@ -5,7 +5,7 @@ import { importProvidersFrom } from '@angular/core';
 import { environment } from '../environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {FlexLayoutServerModule} from '@angular/flex-layout/server';
+import { FlexLayoutServerModule} from '@angular/flex-layout/server';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app.routes';
 import { provideStorage, getStorage } from '@angular/fire/storage';

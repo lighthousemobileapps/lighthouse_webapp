@@ -3,9 +3,9 @@ import { RecordingsService } from "../../services/recordings.service";
 import { RecordingDirectory } from "../../models/recordings/recording-directory";
 import { NavigationExtras, Router, RouterLink } from "@angular/router";
 import { StorageReference } from "firebase/storage";
-import { MatList, MatListItem, MatListItemTitle } from "@angular/material/list";
-import { MatIcon } from "@angular/material/icon";
-import { MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle } from "@angular/material/expansion";
+import { MatListModule } from "@angular/material/list";
+import { MatIconModule } from "@angular/material/icon";
+import { MatExpansionModule } from "@angular/material/expansion";
 import { NgFor } from "@angular/common";
 
 
@@ -15,7 +15,7 @@ import { NgFor } from "@angular/common";
     styleUrls: ['./recordings.component.scss'],
     providers: [RecordingsService],
     standalone: true,
-    imports: [NgFor, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle, MatIcon, MatList, MatListItem, RouterLink, MatListItemTitle]
+    imports: [NgFor, MatExpansionModule, MatIconModule, MatListModule, RouterLink]
 })
 export class RecordingsComponent implements OnInit{
 

@@ -1,5 +1,5 @@
-import { Component, HostListener, OnInit } from '@angular/core';
-import { MatSidenav, MatSidenavContainer, MatSidenavContent } from "@angular/material/sidenav";
+import { Component, HostListener } from '@angular/core';
+import { MatSidenavModule } from "@angular/material/sidenav";
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from '../navigation/header/header.component';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -11,16 +11,13 @@ import { SidenavListComponent } from '../navigation/sidenav-list/sidenav-list.co
     templateUrl: './layout.component.html',
     styleUrls: ['./layout.component.scss'],
     standalone: true,
-    imports: [MatSidenavContainer, MatSidenav, SidenavListComponent, MatSidenavContent, FlexModule, HeaderComponent, RouterOutlet]
+    imports: [MatSidenavModule, SidenavListComponent, FlexModule, HeaderComponent, RouterOutlet]
 })
-export class LayoutComponent implements OnInit {
+export class LayoutComponent {
 
   isSmallScreen: boolean = false;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   @HostListener('window:resize', ['$event'])
   onResize(){

@@ -36,7 +36,7 @@
     "rxjs": "~7.8.0",
     "rxjs-compat": "^6.6.7",
     "tslib": "^2.6.2",
-    "zone.js": "~0.14.4"
+    "zone.js": "^0.14.8"
   },
   "devDependencies": {
     "@angular-devkit/architect": "0.1801.2",
@@ -58,10 +58,11 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "madge": "^7.0.0",
     "open": "^7.0.3",
     "sass": "^1.38.0",
     "sass-loader": "^12.1.0",
-    "typescript": "5.4.3",
+    "typescript": "^5.4.3",
     "webpack": "^5.51.1"
   }
 }

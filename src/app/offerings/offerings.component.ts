@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { MatIcon } from '@angular/material/icon';
-import { MatCard, MatCardHeader, MatCardContent } from '@angular/material/card';
-import { MatTabGroup, MatTab } from '@angular/material/tabs';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
@@ -9,7 +9,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     templateUrl: './offerings.component.html',
     styleUrls: ['./offerings.component.scss'],
     standalone: true,
-    imports: [FlexModule, MatTabGroup, MatTab, MatCard, MatCardHeader, MatCardContent, MatIcon]
+    imports: [FlexModule, MatTabsModule, MatCardModule, MatIconModule],
 })
 export class OfferingsComponent{
 

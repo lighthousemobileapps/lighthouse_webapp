@@ -1,15 +1,15 @@
 import { Component, Output, EventEmitter, OnDestroy, HostListener } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { MatIcon } from '@angular/material/icon';
-import { MatNavList, MatListItem } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 @Component({
     selector: 'app-sidenav-list',
     templateUrl: './sidenav-list.component.html',
     styleUrls: ['./sidenav-list.component.scss'],
     standalone: true,
-    imports: [MatNavList, MatListItem, MatIcon, FlexModule, RouterLink]
+    imports: [MatListModule, MatIconModule, FlexModule, RouterLink]
 })
 
 export class SidenavListComponent {

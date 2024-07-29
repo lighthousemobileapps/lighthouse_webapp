@@ -1,13 +1,13 @@
-import { Component, OnInit, inject } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, inject } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { AccountInfo } from "../models/account-info/account-info";
 import { AccountService } from '../services/account.service';
-import { MatFormFieldModule, FloatLabelType } from '@angular/material/form-field';
+import { FloatLabelType } from '@angular/material/form-field';
 import { ThemeService } from '../services/theme.service';
 import { AuthService } from '../services/auth.service';
-import { MatButton } from '@angular/material/button';
-import { MatIcon } from '@angular/material/icon';
-import { MatSlideToggle } from '@angular/material/slide-toggle';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FlexModule } from '@angular/flex-layout/flex';
 
 
@@ -17,7 +17,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./account.component.scss'],
     providers: [AccountService],
     standalone: true,
-    imports: [FlexModule, MatSlideToggle, MatIcon, MatButton]
+    imports: [FlexModule, MatSlideToggleModule, MatIconModule, MatButtonModule]
 })
 export class AccountComponent {
 
