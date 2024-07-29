@@ -19,28 +19,14 @@ $theme: m3-theme.$light-theme;
 
 // Dark Theme created by ng generate @angular-material:m3-theme
 $dark-theme: m3-theme.$dark-theme;
-:root {
+:root html {
+
   @include mat.all-component-themes($theme);
 
-  // Components themes
   @include layout-component.theme($theme);
 
-  // Add backwards compatibility styles for color variants
-  // @include mat.color-variants-backwards-compatibility($theme);
 
-  @media (prefers-color-scheme: dark) {
-    @include mat.all-component-colors($dark-theme);
 
-    // Components themes
-    @include layout-component.theme($dark-theme);
-
-    @include mat.color-variants-backwards-compatibility($dark-theme);
-  }
-}
-html {
-  // Apply the light theme by default
-  @include mat.all-component-themes($theme);
-  @include layout-component.theme($theme);
 
   @include mat.core-theme($theme);
   @include mat.button-theme($theme);
@@ -50,6 +36,10 @@ html {
   // @include mat.system-level-typography(my-theme.$light-theme);
 }
 
+.dark-theme{
+  @include mat.all-component-colors($dark-theme);
+
+}
 
 
 html,
@@ -58,7 +48,6 @@ body {
 }
 body {
   margin: 0;
-  // font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 $primary-icon-colour: mat.get-theme-color($theme, primary, 40);
