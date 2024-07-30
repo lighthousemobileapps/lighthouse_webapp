@@ -13,10 +13,11 @@ export class AccountService {
 
 
   authService = inject(AuthService);
+  firestore = inject(Firestore)
   info!: Observable<AccountInfo>;
   private currUser: any;
 
-  constructor(private firestore: Firestore) {
+  constructor() {
 
 
     if(this.currUser != null){

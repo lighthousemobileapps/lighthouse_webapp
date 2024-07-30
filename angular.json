@@ -26,7 +26,7 @@
             "server": "src/main.server.ts",
             "ssr": true,
             "prerender": true,
-            "polyfills": [],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [

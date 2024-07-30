@@ -19,7 +19,7 @@ $theme: m3-theme.$light-theme;
 
 // Dark Theme created by ng generate @angular-material:m3-theme
 $dark-theme: m3-theme.$dark-theme;
-:root html {
+:root {
 
   @include mat.all-component-themes($theme);
 
